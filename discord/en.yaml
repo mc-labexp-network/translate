@@ -1,10 +1,1 @@
 tach: "example"
-
-example:
-  test_1: "test category"
-  test_2: "test message"
-example_2:
-  test_1: "test category"
-  test_2: "test message"
-  args:
-    message: "hello world"
