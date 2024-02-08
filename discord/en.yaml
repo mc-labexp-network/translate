@@ -7,4 +7,4 @@ example_2:
   test_1: "test category"
   test_2: "test message"
   args:
-    message: "epta"
+    message: "hello world"
