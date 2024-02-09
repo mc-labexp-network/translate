@@ -1,1 +1,31 @@
-tach: "example"
+messages:
+  errors:
+    noperms:
+      title: "Main - Error!"
+      description: "Dear user! You don't have enough rights to perform this action!"
+  modules:
+    notfound:
+      title: "Modules - Error!"
+      description: "Module not found!"
+    commands:
+      enable:
+        title: "Module - Enable command"
+        description: "This command is used to enable modules in the bot."
+        errors-alrady: "Module already enabled!"
+        success: "Module {name} success enable!"
+        usage: "Used ~module enable `<name>`"
+      disable:
+        title: "Module - Disable command"
+        description: "This command is used to disable modules in the bot."
+        errors-alrady: "Module already disabled!"
+        success: "Module {name} success disable!"
+        usage: "Used ~module disable `<name>`"
+      load:
+        title: "Module - Load command"
+        description: "This command is used to load modules in the bot."
+        all: "All available core modules have been sent for load!"
+        error-file: "File {name} not found!"
+        success: "Jar Module {name} success loading!"
+        usage: "Used ~module load `<File name/*/all>`"
+      
+
