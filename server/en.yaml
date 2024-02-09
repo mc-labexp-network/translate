@@ -1,1 +1,40 @@
-tach: "example"
+plugins:
+  tab:
+    bossbar-help-menu:
+      1: "/tab bossbar [on/off/toggle] [player] [options]"
+      2: "/tab bossbar send <name> [player]"
+      3: "/tab bossbar announce <name> <length>"
+    team-feature-required: "This command requires scoreboard teams feature enabled"
+    nametags-hidden: "Nametags of all players were hidden to you"
+    reload-success: "[TAB] Successfully reloaded"
+    help-menu:
+      0: ""
+      1: ""
+      2: ""
+      3: ""
+      4: ""
+      5: ""
+      6: ""
+      7: ""
+      8: ""
+      9: ""
+      10: ""
+      11: ""
+      12: ""
+    scoreboard:
+      show-usage: ""
+      announce-command-usage: ""
+      help-menu:
+        0: ""
+        1: ""
+        2: ""
+      not-found: ""
+      toggle:
+        on: ""
+        off: ""
+      feature-not-enabled: ""
+
+servers:
+
+
+
