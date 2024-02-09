@@ -1,16 +1,3 @@
-main: "Привет мир!"
-test: "Пока мир!"
-pron: "кот не хороший"
-test2: кот не хороший
-test3: кот не хороший
-test4: кот не хороший
-tach: пример
-example_2:
-  test_1: ''
-  test_2: ''
-example:
-  test_1: ''
-  test_2: ''
 messages:
   modules:
     commands:
