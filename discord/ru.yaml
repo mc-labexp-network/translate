@@ -11,3 +11,33 @@ example_2:
 example:
   test_1: ''
   test_2: ''
+messages:
+  modules:
+    commands:
+      load:
+        title: Модуль - Команда загрузки нового модуля.
+        description: Эта команда служит для загрузки новых модулей в бота.
+        error-file: Файл {name} не найден!
+        usage: Используй ~module load `<Файл/*/all>`
+        all: Все доступные основные модули отправлены на загрузку!
+        success: Jar модуль {name} успешно загружен!
+      disable:
+        usage: Используй ~module disable `<name>`
+        success: Модуль {name} успешно выключен!
+        errors-alrady: Модуль уже выключен!
+        description: Данная команда служит для выключения модулей в боте.
+        title: Модуль - Команда выключения модуля
+      enable:
+        description: Данная команда служит для включения модулей в боте
+        usage: Используй ~module enable `<название>`
+        success: Модуль {name} успешно включен!
+        errors-alrady: Модуль уже включен!
+        title: Модуль - Команда включения модуля
+    notfound:
+      description: Модуль не найден!
+      title: Модули - Ошибка!
+  errors:
+    noperms:
+      description: Уважаемый пользователь! У вас недостаточно прав для использования
+        этого действия!
+      title: Главная - Ошибка!
