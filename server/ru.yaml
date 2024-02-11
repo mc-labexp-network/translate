@@ -1,1 +1,7 @@
 tach: "пример"
+plugins:
+  tab:
+    reload-success: '[TAB] Успешно перезапущен'
+    nametags-hidden: Ники всех игроков были скрыты от вас
+    team-feature-required: Для выполнения этой команды требуется, чтобы была включена
+      функция scoreboard teams
