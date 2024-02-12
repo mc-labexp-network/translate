@@ -5,3 +5,7 @@ plugins:
     nametags-hidden: Ники всех игроков были скрыты от вас
     team-feature-required: Для выполнения этой команды требуется, чтобы была включена
       функция scoreboard teams
+    bossbar-help-menu:
+      2: /tab bossbar send <name> [player]
+      3: /tab bossbar announce <name> <length>
+      1: /tab bossbar [on/off/toggle] [player] [options]
