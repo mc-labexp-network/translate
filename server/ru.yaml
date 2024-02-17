@@ -1,0 +1,22 @@
+plugins:
+servers:
+  lobby:
+    tab:
+      scoreboard:
+        profile:
+          profile: "%img_le_sb_ru_profile%"
+          rank: "Ранг:"
+          balance: "Баланс:"
+          stats:
+            level: "Уровень:"
+            progress: "Прогресс:"
+    cmi:
+      hologram:
+        navboard:
+          1: "Кейсы"
+          2: "Ресторан"
+          3: "Центр управления"
+        infodask:
+          1: "Стойка информации"
+          2: "Здесь вы найдёте информацию"
+          3: "о режиме %1."
