@@ -1,49 +1,90 @@
 plugins:
   tab:
+    announce-command-usage: "Usage: /tab announce <type> <name> <length>\nCurrently supported types: &lbar, scoreboard"
+    bossbar-feature-not-enabled: "&cThis command requires the bossbar feature to be enabled."
+    bossbar-announce-command-usage: "Usage: /tab announce bar <bar name> <length>"
+    bossbar-not-found: "&cNo bossbar found with the name \"%name%\""
+    bossbar-already-announced: "&cThis bossbar is already being announced"
+    group-data-removed: "&3[TAB] All data has been successfully removed from group &e%group%"
+    group-value-assigned: "&3[TAB] %property% '&r%value%&r&3' has been successfully assigned to group &e%group%"
+    group-value-removed: "&3[TAB] %property% has been successfully removed from group &e%group%"
+    user-data-removed: "&3[TAB] All data has been successfully removed from player &e%player%"
+    user-value-assigned: "&3[TAB] %property% '&r%value%&r&3' has been successfully assigned to player &e%player%"
+    user-value-removed: "&3[TAB] %property% has been successfully removed from player &e%player%"
+    parse-command-usage: "Usage: /tab parse <player> <placeholder>"
+    send-command-usage: "Usage: /tab send <type> <player> <bar name> <length>\nCurrently supported types: &lbar"
+    send-bar-command-usage: "Usage: /tab send bar <player> <bar name> <length>"
+    team-feature-required: "This command requires scoreboard teams feature enabled"
+    collision-command-usage: "Usage: /tab setcollision <player> <true/false>"
+    no-permission: "&cI'm sorry, but you do not have permission to perform this command. Please contact the server administrators if you believe that this is in error."
+    command-only-from-game: "&cThis command must be ran from the game"
+    player-not-online: "&cNo online player found with the name \"%player%\""
+    unlimited-nametag-mode-not-enabled: "&c[TAB] Warning! To make this feature work, you need to enable unlimited-nametag-mode in the config!"
+    invalid-number: "\"%input%\" is not a number!"
+    scoreboard-feature-not-enabled: "&4This command requires the scoreboard feature to be enabled."
+    scoreboard-announce-command-usage: "Usage: /tab scoreboard announce <scoreboard name> <length>"
+    scoreboard-not-found: "&cNo scoreboard found with the name \"%name%\""
+    nametag-preview-on: "&7Preview mode &aactivated&7."
+    nametag-preview-of: "&7Preview mode &3deactivated&7."
+    reload-success: "&3[TAB] Successfully reloaded"
+    reload-fail-file: "&3[TAB] &4Failed to reload, file %file% has broken syntax. Check console for more info."
+    scoreboard-toggle-on: "&2Scoreboard enabled"
+    scoreboard-toggle-off: "&7Scoreboard disabled"
+    bossbar-toggle-on: "&2Bossbar is now visible"
+    bossbar-toggle-off: "&7Bossbar is no longer visible. Magic!"
+    scoreboard-show-usage: "Usage: /tab scoreboard show <scoreboard> [player]"
+    bossbar-not-marked-as-announcement: "&cThis bossbar is not marked as an announcement bar and is therefore already displayed permanently (if display condition is met)"
+    bossbar-announcement-success: "&aAnnouncing bossbar &6%bossbar% &afor %length% seconds."
+    bossbar-send-success: "&aSending bossbar &6%bossbar% &ato player &6%player% &afor %length% seconds."
+    armorstands-disabled-cannot-use-preview: "&cYour armor stands are disabled, therefore you cannot use preview feature"
+    help-menu:
+      1: "&m                                                                                "
+      2: " &8>> &3&l/tab reload"
+      3: "      - &7Reloads plugin and config"
+      4: " &8>> &3&l/tab &9group&3/&9player &3<name> &9<property> &3<value...>"
+      5: "      - &7Do &8/tab group/player &7to show properties"
+      6: " &8>> &3&l/tab nametag preview"
+      7: "      - &7Shows your nametag for yourself, for testing purposes"
+      8: " &8>> &3&l/tab announce bar &3<name> &9<seconds>"
+      9: "      - &7Temporarily displays bossbar to all players"
+      10: " &8>> &3&l/tab parse <player> <placeholder> "
+      11: "      - &7Test if a placeholder works"
+      12: " &8>> &3&l/tab debug [player]"
+      13: "      - &7displays debug information about player"
+      14: " &8>> &3&l/tab cpu"
+      15: "      - &7shows CPU usage of the plugin"
+      16: " &8>> &3&l/tab group/player <name> remove"
+      17: "      - &7Clears all data about player/group"
+      18: "&m                                                                                "
+    mysql-help-menu:
+      1: "&6/tab mysql upload - uploads data from files to mysql"
+      2: "&6/tab mysql download - downloads data from mysql to files"
+    mysql-fail-not-enabled: "&cCannot download/upload data from/to MySQL, because it's disabled."
+    mysql-fail-error: "MySQL download failed due to an error. Check console for more info."
+    mysql-download-success: "&aMySQL data downloaded successfully."
+    mysql-upload-success: "&aMySQL data uploaded successfully."
+    nametag-help-menu:
+      1: "/tab nametag preview [player] - toggles armor stand preview mode"
+      2: "/tab nametag toggle [player] - toggles nametags on all players for command sender"
+    nametag-feature-not-enabled: "&cThis command requires nametag feature to be enabled."
+    nametags-hidden: "&aNametags of all players were hidden to you"
+    nametags-shown: "&aNametags of all players were shown to you"
+    scoreboard-help-menu:
+      1: "/tab scoreboard [on/off/toggle] [player] [options]"
+      2: "/tab scoreboard show <name> [player]"
+      3: "/tab scoreboard announce <name> <length>"
     bossbar-help-menu:
       1: "/tab bossbar [on/off/toggle] [player] [options]"
       2: "/tab bossbar send <name> [player]"
       3: "/tab bossbar announce <name> <length>"
-    team-feature-required: "This command requires scoreboard teams feature enabled"
-    nametags-hidden: "Nametags of all players were hidden to you"
-    reload-success: "[TAB] Successfully reloaded"
-    help-menu:
-      0: ""
-      1: ""
-      2: ""
-      3: ""
-      4: ""
-      5: ""
-      6: ""
-      7: ""
-      8: ""
-      9: ""
-      10: ""
-      11: ""
-      12: ""
-    scoreboard:
-      show-usage: ""
-      announce-command-usage: ""
-      help-menu:
-        0: ""
-        1: ""
-        2: ""
-      not-found: ""
-      toggle:
-        on: ""
-        off: ""
-      feature-not-enabled: ""
   cmi:
     info:
       Same: '&cCan''t open your own inventory for editing!'
-      cantLoginWithDifCap: '&cCan''t login with different name capitalization! Old name:
-        &e[oldName]&c. Current: &e[currentName]'
-      Searching: '&eSearching for player data, please wait, this can take some time to
-        finish!'
+      cantLoginWithDifCap: '&cCan''t login with different name capitalization! Old name: &e[oldName]&c. Current: &e[currentName]'
+      Searching: '&eSearching for player data, please wait, this can take some time to finish!'
       NoCommandWhileSleeping: '&cCan''t perform commands while sleeping!'
       PurgeNotEnabled: '&cPurge function is not enabled in config file!'
-      TeamManagementDisabled: '&7This feature will have limited functionalaty while DisableTeamManagement
-        is set to true!'
+      TeamManagementDisabled: '&7This feature will have limited functionalaty while DisableTeamManagement is set to true!'
       NoGameMode: '&cPlease use 0/1/2/3 or Survival/Creative/Adventure/Spectator or s/c/a/sp!'
       NameChange: '&6[playerDisplayName] &elogged in, also known as: &6[namelist]'
       Cooldowns: '&eThis command is on cooldown for another &6[time]'
@@ -62,15 +103,11 @@ plugins:
       Elevator:
         created: '&eCreated elevator sign'
       CantPlaceSpawner: '&eCan''t place spawner so close to another spawner (&6[range]&e)'
-      ChunksLoading: '&eWorld chunk data is still being loaded. Please wait a bit and
-        try again.'
-      CantUseNonEncrypted: '!actionbar!&cCommands on this item are not encrypted. Can''t
-        use them!'
-      CantUseTrident: '!actionbar!&cCan''t use trident with riptide enchant at this moment!'
-      CantDecode: '!actionbar!&cCan''t decode message/command. Key file contains wrong
-        key for this task. Inform server administration about this'
-      CantTeleport: '&eYou can''t teleport because you have too many limited items. Scroll
-        over this line to see the maximum amount of items allowed.'
+      ChunksLoading: '&eWorld chunk data is still being loaded. Please wait a bit and try again.'
+      CantUseNonEncrypted: "!actionbar!&cCommands on this item are not encrypted. Can't use them!"
+      CantUseTrident: "!actionbar!&cCan't use trident with riptide enchant at this moment!"
+      CantDecode: "!actionbar!&cCan't decode message/command. Key file contains wrong key for this task. Inform server administration about this"
+      CantTeleport: "&eYou can't teleport because you have too many limited items. Scroll over this line to see the maximum amount of items allowed."
       CantTeleportDistance: '&eSorry you cant teleport over &6[amount] &eblocks away!'
       BlackList: '&e[material] [amount] &6Max: [max]'
       wrongPortal: '&cYou are in incorrect area of effect'
@@ -264,10 +301,10 @@ plugins:
         info:
           afkTitle: '&eYou are now AFK'
           afkSubTitle:
-          - '&2Don''t eat to much cookies!'
-          - '&2Nice day for fishing'
-          - '&2Afk, again?'
-          - '&2Where are you?'
+            1: '&2Don''t eat to much cookies!'
+            2: '&2Nice day for fishing'
+            3: '&2Afk, again?'
+            4: '&2Where are you?'
       afkcheck:
         help:
           info: '&eCheck players afk status'
@@ -343,13 +380,13 @@ plugins:
           info: '&eSet items repair cost'
           args: (playerName) [amount]
           explanation:
-          - 'Example:'
-          - /repaircost 10
-          - /repaircost set 10
-          - /repaircost add 10
-          - /repaircost take 10
-          - /repaircost Zrips clear
-          - /repaircost Zrips add 10
+            1: 'Example:'
+            2: /repaircost 10
+            3: /repaircost set 10
+            4: /repaircost add 10
+            5: /repaircost take 10
+            6: /repaircost Zrips clear
+            7: /repaircost Zrips add 10
         info:
           current: '&eCurrent items base repair cost: &6[cost]&e.'
           noitem: '&cNot holding any item in hand.'
@@ -434,17 +471,16 @@ plugins:
           info: '&eAttaches command to item'
           args: '[command/-clear]'
           explanation:
-          - Separate commands with ;;
-          - You can define to run command on left or right mouse click separately with
-          - '!left! to perform command on left mouse click'
-          - '!right! to perform command on right click'
-          - '!limiteduse:[amount]! defines how many times you can use this item'
-          - '!safelimiteduse:[amount]! will not remove item after all usages are used'
-          - '!cc! performs command from console, requires cmi.command.attachcommand.cc
-            permission'
-          - '!cooldownn:[amount]! adds cooldown on item usage.'
-          - '[interactedPlayer] inserts name of player you interacted while holding item'
-          - Global variables working in addition with [itemUses]
+            1: "Separate commands with;"
+            2: "You can define to run command on left or right mouse click separately with"
+            3: '!left! to perform command on left mouse click'
+            4: '!right! to perform command on right click'
+            5: '!limiteduse:[amount]! defines how many times you can use this item'
+            6: '!safelimiteduse:[amount]! will not remove item after all usages are used'
+            7: '!cc! performs command from console, requires cmi.command.attachcommand.cc permission'
+            8: '!cooldownn:[amount]! adds cooldown on item usage.'
+            9: '[interactedPlayer] inserts name of player you interacted while holding item'
+            10: Global variables working in addition with [itemUses]
         info:
           list: ' &e[id]. &6[cmd]'
           uses: '&eItem usages: &6[amount]'
@@ -560,39 +596,39 @@ plugins:
             (-p:[maxValue/current]) (-c:[color]) (-s:[1,6,10,12,20]) (-cmd:"command;;command2")
             (-pcmd:"command;;command2") (-a:[ticks]) [message] (-cancel:nameOfBar)'
           explanation:
-          - PlaceHolderAPI is supported for progression and text it self
-          - Time is defined in regular way, like 1s is one second and 1m is one minute.
-            This will determine for how long to keep bar shown for player before automatically
-            hiding
-          - nameOfBar is option and when defining same one, then current bar will update
-            with new information
-          - 'colors can be: red, green, pink, purple, white, yellow'
-          - max and current values determines bar fillup, PlaceHolderAPI variables can
-            be used for dynamic updates
-          - 'Examples:'
-          - /cmi bossbar Zrips BossBarTitle
-          - /cmi bossbarmsg all -t:1s -p:%server_max_players%/%server_online% -n:testbar
-            -c:red &2Title of bar %server_online%/%server_max_players% &e%cmi_user_name%
-          - /cmi bossbarmsg all -p:+1 -n:testbar - will add one percent towards current
-            progresion bar by name
-          - /cmi bossbarmsg all -p:-1 -n:testbar - will take out one percent from current
-            progresion bar by name
-          - /cmi bossbarmsg all -s:10 -n:testbar - will set bossbar style to 10 segments
-            by bar name
-          - /cmi bossbarmsg all -sec:5 - will count for 5 seconds from 0 to 5
-          - /cmi bossbarmsg all -sec:-5 - will count for 5 seconds from 5 to 0
-          - '-cmd: will perform commands ether for single player if target is specific
-            player or only once if its for everyone (all). This will not translated variables
-            lie [playerName] if used with ''all'' variable. Use -pcmd: instead'
-          - '-pcmd: will perform commands on each player if target is ''all'''
-          - https://www.zrips.net/cmi/commands/bossbarmsg-handling/
+            1: PlaceHolderAPI is supported for progression and text it self
+            2: Time is defined in regular way, like 1s is one second and 1m is one minute.
+              This will determine for how long to keep bar shown for player before automatically
+              hiding
+            3: nameOfBar is option and when defining same one, then current bar will update
+              with new information
+            4: 'colors can be: red, green, pink, purple, white, yellow'
+            5: max and current values determines bar fillup, PlaceHolderAPI variables can
+              be used for dynamic updates
+            6: 'Examples:'
+            7: /cmi bossbar Zrips BossBarTitle
+            8: /cmi bossbarmsg all -t:1s -p:%server_max_players%/%server_online% -n:testbar
+              -c:red &2Title of bar %server_online%/%server_max_players% &e%cmi_user_name%
+            9: /cmi bossbarmsg all -p:+1 -n:testbar - will add one percent towards current
+              progresion bar by name
+            10: /cmi bossbarmsg all -p:-1 -n:testbar - will take out one percent from current
+              progresion bar by name
+            11: /cmi bossbarmsg all -s:10 -n:testbar - will set bossbar style to 10 segments
+              by bar name
+            12: /cmi bossbarmsg all -sec:5 - will count for 5 seconds from 0 to 5
+            13: /cmi bossbarmsg all -sec:-5 - will count for 5 seconds from 5 to 0
+            14: '-cmd: will perform commands ether for single player if target is specific
+              player or only once if its for everyone (all). This will not translated variables
+              lie [playerName] if used with ''all'' variable. Use -pcmd: instead'
+            15: '-pcmd: will perform commands on each player if target is ''all'''
+            16: https://www.zrips.net/cmi/commands/bossbarmsg-handling/
       broadcast:
         help:
           info: '&eSends special message to all players'
           args: (!) [message] (-w:[worldName,worldName]) (-r:[range]) (-c:[world;x;y;z])
           explanation:
-          - If message starts with ! then clean message will be shown
-          - Worlds can be defined to broadcast messages only in those worlds
+            1: If message starts with ! then clean message will be shown
+            2: Worlds can be defined to broadcast messages only in those worlds
         info:
           format: '&e[&4Broadcast&e] &2[message]'
       burn:
@@ -719,10 +755,10 @@ plugins:
         info:
           list: '&e[place]. [permission]'
           hover: '&e[desc]'
-          others: |-
-            &4
-            ---->When command is used on another player<----
-            &cBase command required
+          others:
+            1:  '&4'
+            2:  '&4---->When command is used on another player<----'
+            3:  '&cBase command required'
           permissionColor: '&6'
           cmdPermissionColor: '&2'
           variableColor: '&f'
@@ -735,8 +771,8 @@ plugins:
           transferred: '&eTransferred &6[amount] &eto your account. New balance: &6[balance]'
           chequeName: '&eCheque for &6[amount]'
           chequeLore:
-          - '&r&fIssued by &7[senderDisplayName]'
-          - '&r&fRight click to deposit'
+            1: '&r&fIssued by &7[senderDisplayName]'
+            2: '&r&fRight click to deposit'
           holdPaper: '&eHold paper in your hand'
           cantUse: '&eCan''t use this piece of paper. It is a cheque already!'
       clear:
@@ -744,12 +780,12 @@ plugins:
           info: '&eClear players inventory'
           args: (playerName) (item(:amount)(;data)) (-s) (+clearType)
           explanation:
-          - 'Possible clearTypes: quickbar, inventory, partinventory, weapons, armorslots,
-            tools, armors, mainhand, offhand'
-          - Should start with + sign
-          - Multiple types can be used
-          - cmi clear +armors - will remove armor type items
-          - cmi clear +armorslots - will remove items from armorslots
+            1: 'Possible clearTypes: quickbar, inventory, partinventory, weapons, armorslots,
+              tools, armors, mainhand, offhand'
+            2: Should start with + sign
+            3: Multiple types can be used
+            4: cmi clear +armors - will remove armor type items
+            5: cmi clear +armorslots - will remove items from armorslots
         info:
           clearFeedback: '&eYou have removed &6[amount] &eitems from &3[playerDisplayName]&e
             inventory (&3[offon]&e).'
@@ -760,8 +796,8 @@ plugins:
           info: '&eClears chat'
           args: (self) (-s)
           explanation:
-          - 'Permission:'
-          - ' &6cmi.command.clearchat.bypass &e- to ignore chat cleaning'
+            1: 'Permission:'
+            2: ' &6cmi.command.clearchat.bypass &e- to ignore chat cleaning'
         info:
           information: '&eChat was cleared by &6[senderDisplayName]'
       clearender:
@@ -791,34 +827,34 @@ plugins:
           args: (hex/colorname)
         info:
           hovers:
-          - '[color]⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛'
-          - '&f#[hex]'
-          - '&7Closest match: '
-          - '[colorHex] - [colorName]'
-          - '[closeColor]⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛'
-          - Shift+Click
+            1: '[color]⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛'
+            2: '&f#[hex]'
+            3: '&7Closest match: '
+            4: '[colorHex] - [colorName]'
+            5: '[closeColor]⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛'
+            6: Shift+Click
       colors:
         help:
           info: '&eShows all possible colors'
           args: (playerName)
         info:
           List:
-          - '&e***************************************'
-          - '     &0&%0  &1&%1  &2&%2  &3&%3  &4&%4  &5&%5  &6&%6  &7&%7'
-          - '     &8&%8  &9&%9  &a&%a  &b&%b  &c&%c  &d&%d  &e&%e  &f&%f'
-          - '       &%k - &kMagic&r      &%l - &lBold'
-          - '       &%m - &mStrike&r     &%n - &nUline'
-          - '       &%o - &oItalic&r      &%r - &rReset'
-          - '&e***************************************'
+            1: '&e***************************************'
+            2: '     &0&%0  &1&%1  &2&%2  &3&%3  &4&%4  &5&%5  &6&%6  &7&%7'
+            3: '     &8&%8  &9&%9  &a&%a  &b&%b  &c&%c  &d&%d  &e&%e  &f&%f'
+            4: '       &%k - &kMagic&r      &%l - &lBold'
+            5: '       &%m - &mStrike&r     &%n - &nUline'
+            6: '       &%o - &oItalic&r      &%r - &rReset'
+            7: '&e***************************************'
       compass:
         help:
           info: '&eSet players compass point to your location'
           args: (targetName) (sourceName) (x) (z) (worldname) (reset) (-s)
           explanation:
-          - 'Example: /cmi compass Zhax'
-          - /cmi compass Zhax Zrips
-          - /cmi compass Zhax LT_Craft 0 0 -s
-          - /cmi compass reset Zhax
+            1: 'Example: /cmi compass Zhax'
+            2: /cmi compass Zhax Zrips
+            3: /cmi compass Zhax LT_Craft 0 0 -s
+            4: /cmi compass reset Zhax
         info:
           wrongworld: '&cYour defined world dont exist!'
           feedback: '&eYou have set &3[playerDisplayName] &ecompass arrow to &3[sourceDisplayName]
@@ -845,14 +881,14 @@ plugins:
           args: '[join/leave/start] (t:time) (r:[range/-1]) (c:[world:x:y:z]) (msg:custom_message)
             (-f)'
           explanation:
-          - '&ePermissions:'
-          - '&6cmi.command.counter.force &e- to force counter for everyone in range '
-          - '&6cmi.command.counter.time &e- define custom time range '
-          - '&6cmi.command.counter.range &e- to define custom range'
-          - '&6cmi.command.counter.msg &e- to define custom message'
-          - '&6cmi.command.counter.autojoin &e- joins counter automatically'
-          - -f will force counter to all players in range
-          - 'Example: /cmi counter start r:30 t:7 msg:&eCustom_message -f'
+            1: '&ePermissions:'
+            2: '&6cmi.command.counter.force &e- to force counter for everyone in range '
+            3: '&6cmi.command.counter.time &e- define custom time range '
+            4: '&6cmi.command.counter.range &e- to define custom range'
+            5: '&6cmi.command.counter.msg &e- to define custom message'
+            6: '&6cmi.command.counter.autojoin &e- joins counter automatically'
+            7: -f will force counter to all players in range
+            8: 'Example: /cmi counter start r:30 t:7 msg:&eCustom_message -f'
         info:
           join: '&eJoined counter'
           leave: '&eLeft counter'
@@ -884,8 +920,7 @@ plugins:
           info: '&eSend tellraw type message'
           args: '[playerName/all] [formattedMessage]'
           explanation:
-          - Usage is same as shown in https://www.zrips.net/cmi/custom-text/ aka customtext
-            command
+            1: Usage is same as shown in https://www.zrips.net/cmi/custom-text/ aka customtext command
       ctext:
         help:
           info: '&eShows custom text'
@@ -986,17 +1021,17 @@ plugins:
           guiHover: '&7Open dynamic sign settings GUI'
           individual: '&7Individual: [state]'
           individualLore:
-          - '&2True &7- Will result sign to be different for each player'
-          - '&2True &7- Will update player placeholders'
-          - '&2False &7- Will result in sign to be physically updated'
-          - '&2False &7- Is more efficient but more limited at same time'
+            1: '&2True &7- Will result sign to be different for each player'
+            2: '&2True &7- Will update player placeholders'
+            3: '&2False &7- Will result in sign to be physically updated'
+            4: '&2False &7- Is more efficient but more limited at same time'
           interval: '&7Update every &6[second] &7second'
           intervalLore:
-          - '&7How often, in seconds, information on the sign is updated'
-          - '&7This also defines line scroll speed'
+            1: '&7How often, in seconds, information on the sign is updated'
+            2: '&7This also defines line scroll speed'
           range: '&7Activation range: &6[blocks]'
           rangeLore:
-          - '&7Defines area around sign to trigger updates'
+            1: '&7Defines area around sign to trigger updates'
       dye:
         help:
           info: '&eDye leather armor'
@@ -1090,14 +1125,14 @@ plugins:
           info: '&eAdds potion effect to player. use clear to remove all effects'
           args: '[playername/all] [effect/clear] (duration) (multiplier) (-s) (-visual)'
           explanation:
-          - -visual will add visible bubbles and icon on top right corner
-          - 'Examples:'
-          - /cmi effect zrips nightvision 60 1 - will give 60 sec night vision for Zrips
-          - /cmi effect zrips nightvision +10 - will add 10 sec to current night vision
-            time
-          - /cmi effect zrips nightvision -10 - will take out 10 sec from current night
-            vision time
-          - /cmi effect all health_boost 60 1 - will boost hp by 1 for everyone online
+            1: -visual will add visible bubbles and icon on top right corner
+            2: 'Examples:'
+            3: /cmi effect zrips nightvision 60 1 - will give 60 sec night vision for Zrips
+            4: /cmi effect zrips nightvision +10 - will add 10 sec to current night vision
+              time
+            5: /cmi effect zrips nightvision -10 - will take out 10 sec from current night
+              vision time
+            6: /cmi effect all health_boost 60 1 - will boost hp by 1 for everyone online
         info:
           feedback: '&ePotion effect &6[effect] &eadded to &3[playerDisplayName]&e for
             &6[sec]sec&e with power of &6[power] &e(&3[offon]&e).'
@@ -1108,7 +1143,7 @@ plugins:
           args: (playerName) [enchant] [level] (-o) (-onlyvalid) (-keeponlyvalid) (-inform)
             (-s) (-i:[itemName(:data)]) (clear)
           explanation:
-          - -o will take item from offhand
+            1: -o will take item from offhand
         info:
           feedback: '&eYou have enchanted item with &3[enchant]:[level]&e enchantment
             for &3[playerDisplayName]'
@@ -1130,8 +1165,8 @@ plugins:
           info: '&eOpens players ender chest'
           args: (playerName) (playerName)
           explanation:
-          - cmi.command.ender.preventmodify - prevents inventory modifications
-          - cmi.enderedit - allows to edit opened inventory
+            1: cmi.command.ender.preventmodify - prevents inventory modifications
+            2: cmi.enderedit - allows to edit opened inventory
         info:
           title: '&8[playerDisplayName] Ender Chest'
           feedback: '&eYou are editing &3[playerDisplayName] &eenderchest (&3[offon]&e).'
@@ -1167,14 +1202,14 @@ plugins:
           args: '[playerName] [add/set/take/clear] [amount][%rand/10-20%][1%[min-max]][playerName]]
             (-s)'
           explanation:
-          - 'Example:'
-          - /exp 10
-          - /exp add 10
-          - /exp set 10L
-          - /exp take 10
-          - /exp Zrips clear
-          - /exp Zrips add 10
-          - /exp Zrips add 10%[10-50]
+            1: 'Example:'
+            2: /exp 10
+            3: /exp add 10
+            4: /exp set 10L
+            5: /exp take 10
+            6: /exp Zrips clear
+            7: /exp Zrips add 10
+            8: /exp Zrips add 10%[10-50]
         info:
           current: '&e[playerDisplayName] &eis at &6[lvl]&elvl with &6[currentExp]&eexp
             or with &6[exp]&eexp in total.'
@@ -1216,20 +1251,20 @@ plugins:
           info: '&eScans for damaged chunks'
           args: '&ew &6[worldName]&e r &6[range in chunks]&e c &6[x:z]&e '
           explanation:
-          - '&6SubCommands:'
-          - '- &6stats &e- show current scanning stats'
-          - '- &6pause &e- pause scanning'
-          - '- &6continue &e- continue scanning'
-          - '- &6stop &e- stop scanning'
-          - '- &6stopall &e- stop all scanning'
-          - '- &6speed [amount] &e- set current scan speed'
-          - '- &6autospeed [true/false] &e- set autospeed turned off or on'
-          - '- &6messages [true/false] &e- set message output to off or on'
-          - 'Example:'
-          - /fixchunk w LT_Craft
-          - /fixchunk w LT_Craft r 50 c 1024:-2048
-          - /fixchunk w LT_Craft r g
-          - /fixchunk fix
+            1: '&6SubCommands:'
+            2: '- &6stats &e- show current scanning stats'
+            3: '- &6pause &e- pause scanning'
+            4: '- &6continue &e- continue scanning'
+            5: '- &6stop &e- stop scanning'
+            6: '- &6stopall &e- stop all scanning'
+            7: '- &6speed [amount] &e- set current scan speed'
+            8: '- &6autospeed [true/false] &e- set autospeed turned off or on'
+            9: '- &6messages [true/false] &e- set message output to off or on'
+            10: 'Example:'
+            11: /fixchunk w LT_Craft
+            12: /fixchunk w LT_Craft r 50 c 1024:-2048
+            13: /fixchunk w LT_Craft r g
+            14: /fixchunk fix
         info:
           startScanning: '&eFound &6[amount] &echunks to check. Starting!'
           paused: '&eScanning paused, to continue use &6/cmi fixchunk continue.'
@@ -1247,15 +1282,15 @@ plugins:
           fixed: '&2[number] &echunks fixed'
           total: '&eChecking from [current]/[until] from total of [total]'
           stats:
-          - '&e************************************************************'
-          - '&e* &6Chunks: &e[checked]/[total]'
-          - '&e* &6Scan range: &e[range]'
-          - '&e* &6Scan speed: &e[scanspeed] &6(&e[autospeed]&6)'
-          - '&e* &6Real speed: &e[cps] &6CPS (&e[avgcps] avg&6)'
-          - '&e* &6World: &e[world]'
-          - '&e* &6Found: &e[found]'
-          - '&e* &6Time: &e[min]min [sec]sec'
-          - '&e************************************************************'
+            1: '&e************************************************************'
+            2: '&e* &6Chunks: &e[checked]/[total]'
+            3: '&e* &6Scan range: &e[range]'
+            4: '&e* &6Scan speed: &e[scanspeed] &6(&e[autospeed]&6)'
+            5: '&e* &6Real speed: &e[cps] &6CPS (&e[avgcps] avg&6)'
+            6: '&e* &6World: &e[world]'
+            7: '&e* &6Found: &e[found]'
+            8: '&e* &6Time: &e[min]min [sec]sec'
+            9: '&e************************************************************'
       flightcharge:
         help:
           info: '&eManage and check flight charges'
@@ -1271,12 +1306,11 @@ plugins:
           buttonMoney: '&6Recharge with money'
           max: '&6Already fully charged'
           amounts:
-          - '&eLeft click +1. Cost: &7[amount1]'
-          - '&6Shift left +10. Cost: &7[amount10]'
-          - '&eRight click +100. Cost: &7[amount100]'
-          - '&6Shift right +1000. Cost: &7[amount1000]'
-          - '&eMiddle Mouse +10000. Cost: &7[amount10000]'
-          - ''
+            1: '&eLeft click +1. Cost: &7[amount1]'
+            2: '&6Shift left +10. Cost: &7[amount10]'
+            3: '&eRight click +100. Cost: &7[amount100]'
+            4: '&6Shift right +1000. Cost: &7[amount1000]'
+            5: '&eMiddle Mouse +10000. Cost: &7[amount10000]'
           changeAmount: '&e([amount]&e)'
           cost: '&eCharged &6[amount] &efor &6[charge] &eflight charges'
       fly:
@@ -1326,10 +1360,10 @@ plugins:
           info: '&eGive item to player'
           args: (playerName) [itemdata/hand] (playerName) (-slot:[number]) (unstack) (-s)
           explanation:
-          - |-
-            Example: /cmi give diamondsword;{#Gray}My_Uber_Sword;&2Goblin_Slayer!
-            {#pink}With_Love!;sharpness:3,durability:3;hideenchants
-          - <T>More information at www.zrips.net/cmi/commands/icwol/</T><URL>https://www.zrips.net/cmi/commands/icwol/</URL>
+            1: |-
+              Example: /cmi give diamondsword;{#Gray}My_Uber_Sword;&2Goblin_Slayer!
+              {#pink}With_Love!;sharpness:3,durability:3;hideenchants
+            2: <T>More information at www.zrips.net/cmi/commands/icwol/</T><URL>https://www.zrips.net/cmi/commands/icwol/</URL>
         info:
           feedback: '&6Giving &e[amount] &6of &e[itemname] &6(&e[customitemname]&6) to
             &e[playerDisplayName]'
@@ -1341,18 +1375,18 @@ plugins:
           info: '&eGive item for all players'
           args: '[itemname] (amount) (e|l|n|offline)'
           explanation:
-          - '&e- give item name or its id with data value'
-          - '&e- optionaly provide amount you want to give '
-          - '&e- &6n &e- to define itemname '
-          - '&e- &6l &e- to define item lore '
-          - '&e- &6e &e - to define item enchants '
-          - '&e- &6-s &e - wont show feedback message '
-          - '&e- &6h &e - followed with player name will give item from its hand '
-          - '&e- &6inv &e - followed by player name will give entire inventory for others '
-          - '&e- &6offline &e- to include offline players'
-          - '&ecmi giveall stone 1 n &2Uber_stone l &3Stone_lore offline'
-          - '&ecmi giveall h Zrips'
-          - '&ecmi giveall inv Zrips'
+            1: '&e- give item name or its id with data value'
+            2: '&e- optionaly provide amount you want to give '
+            3: '&e- &6n &e- to define itemname '
+            4: '&e- &6l &e- to define item lore '
+            5: '&e- &6e &e - to define item enchants '
+            6: '&e- &6-s &e - wont show feedback message '
+            7: '&e- &6h &e - followed with player name will give item from its hand '
+            8: '&e- &6inv &e - followed by player name will give entire inventory for others '
+            9: '&e- &6offline &e- to include offline players'
+            10: '&ecmi giveall stone 1 n &2Uber_stone l &3Stone_lore offline'
+            11: '&ecmi giveall h Zrips'
+            12: '&ecmi giveall inv Zrips'
         info:
           starting: '&6Starting to give items for all players, this can take some time.'
           running: '&6[amount] already got item, still running.'
@@ -1362,9 +1396,9 @@ plugins:
           info: '&eSet players glow mode'
           args: (playerName) [true/false/color/gui]
           explanation:
-          - 'Example: /glow Zrips red'
-          - 'Permissions: cmi.command.glow.color.[color] - allows to set particular glow
-            color'
+            1: 'Example: /glow Zrips red'
+            2: 'Permissions: cmi.command.glow.color.[color] - allows to set particular glow
+              color'
         info:
           feedback: '&eYou have set [color]glow &eto &3[boolean]&e for &3[playerDisplayName]&e
             (&3[offon]&e).'
@@ -1401,13 +1435,13 @@ plugins:
           args: (+cb) (+cm) (+ci) (+b) (+sh) (+tnt) (+all) (+fl) (+named) (-w:[worldName])
             (-s)
           explanation:
-          - +cm will include minecarts into cleaning
-          - +cb will include boats into cleaning
-          - +sh will include shulker box into cleaning
-          - +ci defines if you want to include weapons and armors
-          - +tnt defines if you want to include primed tnt
-          - +named removes items with custom name or lore
-          - +b broadcasts clear message to everyone
+            1: +cm will include minecarts into cleaning
+            2: +cb will include boats into cleaning
+            3: +sh will include shulker box into cleaning
+            4: +ci defines if you want to include weapons and armors
+            5: +tnt defines if you want to include primed tnt
+            6: +named removes items with custom name or lore
+            7: +b broadcasts clear message to everyone
         info:
           removed: '&eRemoved -[list]'
           items: ' &eItems: &6[items]'
@@ -1486,8 +1520,8 @@ plugins:
           guiHover: '&7Open hologram settings GUI'
           interval: '&7Update every &6[second] &7seconds'
           intervalLore:
-          - '&7How often, in seconds, information on the hologram is updated'
-          - '&7If text is not changing, set it to 0'
+            1: '&7How often, in seconds, information on the hologram is updated'
+            2: '&7If text is not changing, set it to 0'
           pageInterval: '&7Change page every &6[second] &7seconds'
           pageIntervalLore:
           - '&7How often, in seconds, hologram page is changed automatically'
@@ -1498,25 +1532,25 @@ plugins:
           teleport: '&7Teleport to hologram location'
           icon: '&7Spacing for icons &6[space]'
           iconLore:
-          - '&7Defines distance between objects'
+            1: '&7Defines distance between objects'
           range: '&7Show range: &6[blocks]'
           rangeLore:
-          - '&7Defines area around hologram to show or hide it'
+            1: '&7Defines area around hologram to show or hide it'
           updateRange: '&7Update range: &6[blocks]'
           updateRangeLore:
-          - '&7Defines area around hologram to trigger update'
+            1: '&7Defines area around hologram to trigger update'
           relocate: '&7Relocate'
           relocateLore:
-          - '&7Relocates hologram to your current location'
+            1: '&7Relocates hologram to your current location'
           los: '&7Consider line of sight: &6[state]'
           losLore:
-          - '&7Check interval: [interval]'
+            1: '&7Check interval: [interval]'
           interact: '&7Interactable: &6[state]'
           particles: '&7Show particles: &6[state]'
           big: '&7Big button: &6[state]'
           bigLore:
-          - '&7Keep in mind that big button mode'
-          - '&7Will prevent you from moving past it'
+            1: '&7Keep in mind that big button mode'
+            2: '&7Will prevent you from moving past it'
           order: '&7Downwards placement: &6[state]'
           commands: '&7Commands:'
           newMethod: '&7Use new method: &6[state]'
@@ -4536,281 +4570,6 @@ plugins:
         WINDSWEPT_HILLS: Windswept hills
         WINDSWEPT_SAVANNA: Windswept savanna
         WOODED_BADLANDS: Wooded badlands
-      EntityType:
-        allay: Allay
-        area_effect_cloud: Area effect cloud
-        armor_stand: Armor stand
-        arrow: Arrow
-        axolotl: Axolotl
-        bat: Bat
-        bee: Bee
-        blaze: Blaze
-        block_display: Block display
-        boat: Boat
-        breeze: Breeze
-        camel: Camel
-        cat: Cat
-        cave_spider: Cave spider
-        chest_boat: Chest boat
-        chicken: Chicken
-        cod: Cod
-        cow: Cow
-        creeper: Creeper
-        dolphin: Dolphin
-        donkey: Donkey
-        dragon_fireball: Dragon fireball
-        dropped_item: Dropped item
-        drowned: Drowned
-        egg: Egg
-        elder_guardian: Elder guardian
-        enderman: Enderman
-        endermite: Endermite
-        ender_crystal: Ender crystal
-        ender_dragon: Ender dragon
-        ender_pearl: Ender pearl
-        ender_signal: Ender signal
-        evoker: Evoker
-        evoker_fangs: Evoker fangs
-        experience_orb: Experience orb
-        falling_block: Falling block
-        fireball: Fireball
-        firework: Firework
-        fishing_hook: Fishing hook
-        fox: Fox
-        frog: Frog
-        ghast: Ghast
-        giant: Giant
-        glow_item_frame: Glow item frame
-        glow_squid: Glow squid
-        goat: Goat
-        guardian: Guardian
-        hoglin: Hoglin
-        horse: Horse
-        husk: Husk
-        illusioner: Illusioner
-        interaction: Interaction
-        iron_golem: Iron golem
-        item_display: Item display
-        item_frame: Item frame
-        leash_hitch: Leash hitch
-        lightning: Lightning
-        llama: Llama
-        llama_spit: Llama spit
-        magma_cube: Magma cube
-        marker: Marker
-        minecart: Minecart
-        minecart_chest: Minecart chest
-        minecart_command: Minecart command
-        minecart_furnace: Minecart furnace
-        minecart_hopper: Minecart hopper
-        minecart_mob_spawner: Minecart mob spawner
-        minecart_tnt: Minecart tnt
-        mule: Mule
-        mushroom_cow: Mushroom cow
-        ocelot: Ocelot
-        painting: Painting
-        panda: Panda
-        parrot: Parrot
-        phantom: Phantom
-        pig: Pig
-        piglin: Piglin
-        piglin_brute: Piglin brute
-        pillager: Pillager
-        player: Player
-        polar_bear: Polar bear
-        primed_tnt: Primed tnt
-        pufferfish: Pufferfish
-        rabbit: Rabbit
-        ravager: Ravager
-        salmon: Salmon
-        sheep: Sheep
-        shulker: Shulker
-        shulker_bullet: Shulker bullet
-        silverfish: Silverfish
-        skeleton: Skeleton
-        skeleton_horse: Skeleton horse
-        slime: Slime
-        small_fireball: Small fireball
-        sniffer: Sniffer
-        snowball: Snowball
-        snowman: Snowman
-        spectral_arrow: Spectral arrow
-        spider: Spider
-        splash_potion: Splash potion
-        squid: Squid
-        stray: Stray
-        strider: Strider
-        tadpole: Tadpole
-        text_display: Text display
-        thrown_exp_bottle: Thrown exp bottle
-        trader_llama: Trader llama
-        trident: Trident
-        tropical_fish: Tropical fish
-        turtle: Turtle
-        unknown: Unknown
-        vex: Vex
-        villager: Villager
-        vindicator: Vindicator
-        wandering_trader: Wandering trader
-        warden: Warden
-        wind_charge: Wind charge
-        witch: Witch
-        wither: Wither
-        wither_skeleton: Wither skeleton
-        wither_skull: Wither skull
-        wolf: Wolf
-        zoglin: Zoglin
-        zombie: Zombie
-        zombie_horse: Zombie horse
-        zombie_villager: Zombie villager
-        zombified_piglin: Zombified piglin
-      EnchantAliases:
-        swift_sneak:
-        - SWIFTSNEAK
-        protection_fall:
-        - FallProtection
-        - FeatherFalling
-        arrow_infinite:
-        - Infinity
-        arrow_fire:
-        - Flame
-        impaling:
-        - Impaling
-        protection_environmental:
-        - Protection
-        knockback:
-        - Knockback
-        depth_strider:
-        - DepthStrider
-        luck:
-        - Luck
-        silk_touch:
-        - SilkTouch
-        loyalty:
-        - Loyalty
-        vanishing_curse:
-        - VanishingCurse
-        protection_fire:
-        - FireProtection
-        channeling:
-        - Channeling
-        binding_curse:
-        - BindingCurse
-        sweeping_edge:
-        - SweepingEdge
-        quick_charge:
-        - QUICKCHARGE
-        damage_arthropods:
-        - BaneOfArthropods
-        frost_walker:
-        - FrostWalker
-        multishot:
-        - Multishot
-        protection_projectile:
-        - ProjectileProtection
-        water_worker:
-        - AquaAffinity
-        soul_speed:
-        - SOULSPEED
-        loot_bonus_mobs:
-        - Looting
-        damage_undead:
-        - Smite
-        piercing:
-        - Piercing
-        lure:
-        - Lure
-        riptide:
-        - Riptide
-        arrow_damage:
-        - Power
-        protection_explosions:
-        - BlastProtection
-        mending:
-        - Mending
-        fire_aspect:
-        - FireAspect
-        oxygen:
-        - Respiration
-        thorns:
-        - Thorns
-        arrow_knockback:
-        - Punch
-        damage_all:
-        - Sharpness
-        dig_speed:
-        - Efficiency
-        loot_bonus_blocks:
-        - Fortune
-        durability:
-        - Unbreaking
-      PotionEffectAliases:
-        fire_resistance:
-        - Fire resistance
-        water_breathing:
-        - Water breathing
-        jump:
-        - Jump
-        saturation:
-        - Saturation
-        health_boost:
-        - Health boost
-        night_vision:
-        - Night vision
-        weakness:
-        - Weakness
-        wither:
-        - Wither
-        slow_digging:
-        - Slow digging
-        slow_falling:
-        - Slow falling
-        luck:
-        - Luck
-        increase_damage:
-        - Increase damage
-        poison:
-        - Poison
-        hero_of_the_village:
-        - Hero of the village
-        unluck:
-        - Unluck
-        invisibility:
-        - Invisibility
-        absorption:
-        - Absorption
-        slow:
-        - Slow
-        fast_digging:
-        - Fast digging
-        glowing:
-        - Glowing
-        bad_omen:
-        - Bad omen
-        dolphins_grace:
-        - Dolphins grace
-        levitation:
-        - Levitation
-        conduit_power:
-        - Conduit power
-        blindness:
-        - Blindness
-        harm:
-        - Harm
-        confusion:
-        - Confusion
-        heal:
-        - Heal
-        regeneration:
-        - Regeneration
-        hunger:
-        - Hunger
-        speed:
-        - Speed
-        darkness:
-        - Darkness
-        damage_resistance:
-        - Damage resistance
     direction:
       n: North
       ne: North East
@@ -4928,16 +4687,6 @@ plugins:
           feedback: '&6CMIL Configs and locale files reloaded! Took [ms]ms'
           failedConfig: '&4Failed to load config file! Check spelling!'
           failedLocale: '&4Failed to load locale file! Check spelling!'
-  hubpvp:
-    pvp-status: "%hcore_font:hl_pvp%"
-    pvp-enabled: '[lang]hub.hubpvp.pvp-enabled[/lang]'
-    pvp-enabling: '%hcore_font:hl_lobby% &fPvP enabling in &c%time% &fsecond(s).'
-    pvp-disabled: '%hcore_font:hl_lobby% &cPvP disabled!'
-    pvp-disabling: '%hcore_font:hl_lobby% &fPvP disabling in &c%time% &fsecond(s).'
-    reloaded: '%hcore_font:hl_lobby% &aSuccessfully reloaded the HubPvP config!'
-    killed: '%hcore_font:hl_lobby% &4%killer% &chas killed you.'
-    killed-other: '%hcore_font:hl_lobby% &eYou have killed &6%killed%&e!'
-    disabled-in-world: "%hcore_font:hl_lobby% &cYou may not use this in this world!"
   lechat:
     translator:
       hint: "Click to translate.."
@@ -4961,3 +4710,24 @@ plugins:
     filter:
       alert: "The chat filter has blocked some of the words of the {player} to the server {server}: {message}"
 servers:
+  lobby:
+    tab:
+      scoreboard:
+        profile:
+          profile: "%img_le_sb_en_profile%"
+          rank: "Rank:"
+          balance: "Balance:"
+          stats:
+            level: "Level:"
+            progress: "Progress:"
+    cmi:
+      hologram:
+        navboard:
+          1: "Cases"
+          2: "Restaurant"
+          3: "Control Center"
+        infodask:
+          1: "Information Desk"
+          2: "Here you will find information"
+          3: "about %1 mode."
+
