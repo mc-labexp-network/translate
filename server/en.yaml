@@ -327,7 +327,7 @@ plugins:
           args: '[add/list/remove] [playerName] (reason) (-s)'
         info:
           inform:
-          - '&e!Alert!******** &6[name] &4just logged in! &e*******!Alert!'
+            1: '&e!Alert!******** &6[name] &4just logged in! &e*******!Alert!'
           reason: '&eAlert reason: &6[reason]'
           removed: '&6[playerDisplayName] &eremoved from alert list'
           added: '&eAlert message will be sent to all administrators, if &6[playerDisplayName]
@@ -1366,7 +1366,7 @@ plugins:
             2: '&7If text is not changing, set it to 0'
           pageInterval: '&7Change page every &6[second] &7seconds'
           pageIntervalLore:
-          - '&7How often, in seconds, hologram page is changed automatically'
+            1: '&7How often, in seconds, hologram page is changed automatically'
           pageIntervalNoPages: '&4This hologram doesn''t have any pages yet'
           text: '&7Spacing for text &6[space]'
           usync: '&7Text change in sync: &6[state]'
@@ -1437,15 +1437,15 @@ plugins:
           nextPage: <T>  &6>>>></T><H>  &e>>>></H>
           autoButton: '&7Automatically generate pagination buttons'
           autoButtonLore:
-          - '&eCurrent hologram doesnt have any pages created'
-          - '&eUse &6!nextpage! &eas a new line to make next page'
+            1: '&eCurrent hologram doesnt have any pages created'
+            2: '&eUse &6!nextpage! &eas a new line to make next page'
           autoButtonForward: '&2This hologram already has forwards button created'
           autoButtonBackward: '&2This hologram already has backwards button created'
           moveX: '&7X:&e[x]'
           moveY: '&7Y:&e[y]'
           moveZ: '&7Z:&e[z]'
           shift:
-          - '&eChange by 0.01 or hold shift to change by 0.1'
+            1: '&eChange by 0.01 or hold shift to change by 0.1'
           listFormat: '&6[name]&7: &r[extra]'
           addInfo: '&eEnter new line text. Type &6cancel &eto cancel. Extra variables:
             &6ICON:&7[Value] &6SICON:&7[Value]&e where &7Value&e- &7[MaterialName-amount]%enchanted%&e,
@@ -1595,17 +1595,17 @@ plugins:
           newBalance: '&7(&e[balance]&7) '
           newDisplayName: '&7Display name: &r[playerDisplayName]'
           newNameHover:
-          - '[playerDisplayName]'
-          - '[nick]'
-          - '[group]'
-          - '[title]'
-          - '[onlineoffline]'
-          - '[playtime]'
+            1: '[playerDisplayName]'
+            2: '[nick]'
+            3: '[group]'
+            4: '[title]'
+            5: '[onlineoffline]'
+            6: '[playtime]'
           newIp: '&fIP '
           newIpHover:
-          - '[ip][country]'
-          - '[ping]'
-          - '[firstLogin]'
+            1: '[ip][country]'
+            2: '[ping]'
+            3: '[firstLogin]'
           newNameHoverNick: '&7Nick: &f[nick]'
           newNameHoverGroup: '&7Group: &f[group]'
           newNameHoverTitle: '&7Prefix: &f[prefix] &7Suffix: &f[suffix]'
@@ -1637,14 +1637,14 @@ plugins:
           newWalkSpeed: '&7Walk speed: &6[walkspeed]'
           newGameMode: '&fMode: &6[gameMode] '
           newGameModeHover:
-          - '[sprint]'
-          - '[sneaking]'
-          - '[walkspeed]'
-          - '[hp]'
-          - '[air]'
-          - '[hunger]'
-          - '[saturation]'
-          - '[exp]'
+            1: '[sprint]'
+            2: '[sneaking]'
+            3: '[walkspeed]'
+            4: '[hp]'
+            5: '[air]'
+            6: '[hunger]'
+            7: '[saturation]'
+            8: '[exp]'
           newHp: '&7HP: &6[hp]&e/&6[maxhp]'
           newAir: '&7Air: &6[leftAir]&e/&6[totalAir]'
           newHunger: '&7Hunger: &6[food]&e/&620'
@@ -1672,40 +1672,40 @@ plugins:
           vanishedHover: '&6Vanished'
           newBanned: 'Banned '
           newBannedHover:
-          - '&7Banned by: &e[name]'
-          - '&7Left: &e[left]'
-          - '&7For: &e[reason]'
+            1: '&7Banned by: &e[name]'
+            2: '&7Left: &e[left]'
+            3: '&7For: &e[reason]'
           newMuted: 'Muted '
           newMutedHover:
-          - '&7Left: &e[left]'
-          - '&7For: &e[reason]'
+            1: '&7Left: &e[left]'
+            2: '&7For: &e[reason]'
           newShadowMutedHover: '&4Shadow mute'
           newCuffed: 'Cuffed '
           newJailed: 'Jailed '
           newJailedHover:
-          - '&7Jail: &e[jail]'
-          - '&7Cell: &e[id]'
-          - '&7Left: &e[time]'
-          - '&7Reason: &e[reason]'
+            1: '&7Jail: &e[jail]'
+            2: '&7Cell: &e[id]'
+            3: '&7Left: &e[time]'
+            4: '&7Reason: &e[reason]'
           newHomes: '&fHomes: &e[count] '
           newMail: '&fMail: &e[count] '
           newWarnings: '&fWarnings: &e[count] '
           newAlert: 'Alert '
           newAlertHover:
-          - '&7Left: &e[left]'
-          - '&7For: &e[reason]'
+            1: '&7Left: &e[left]'
+            2: '&7For: &e[reason]'
           newChatRoom: 'ChatRoom '
           newChatRoomHover:
-          - '&7ChatRoom: &e[name]'
-          - '&7Users in: &e[count]'
+            1: '&7ChatRoom: &e[name]'
+            2: '&7Users in: &e[count]'
           List:
-          - '&e------------- [enableColor]Enabled [disableColor]Disabled&e -------------'
-          - '&e| [name][balance][UUID][ip]'
-          - '&e| [OP][god][fly][gameMode][afk][see]'
-          - '&e| [banned][muted][cuffed][jailed][alert][chatroom]'
-          - '&e| [pos][bed][respawn][death][back][ender][inv]'
-          - '&e| [homes][mail][warnings]'
-          - '&e-----------------------------------------'
+            1: '&e------------- [enableColor]Enabled [disableColor]Disabled&e -------------'
+            2: '&e| [name][balance][UUID][ip]'
+            3: '&e| [OP][god][fly][gameMode][afk][see]'
+            4: '&e| [banned][muted][cuffed][jailed][alert][chatroom]'
+            5: '&e| [pos][bed][respawn][death][back][ender][inv]'
+            6: '&e| [homes][mail][warnings]'
+            7: '&e-----------------------------------------'
       inv:
         help:
           info: '&eOpens players inventory'
@@ -1927,7 +1927,6 @@ plugins:
         help:
           info: '&eGives predefined kit.'
           args: '[kitName] (playerName) (-s) (-open) (-preview)'
-          - '&6/cmi kit [kitName] [playerName] &e- will give kit to another player'
         info:
           noMoney: '&eNot enough money. Cost: &6[cost] &eyou have &6[balance]'
           noExp: '&eNot enough exp. Cost: &6[cost] &eyou have &6[balance]'
@@ -1947,7 +1946,7 @@ plugins:
           givenKit: '&eYou have given &6[kit] &eto &6[playerDisplayName]'
           title: '&8Kits'
           titlesByPage:
-          - '&8Kits'
+            1: '&8Kits'
           nameCanUse: '&6[kitName]'
           nameCantUse: '&7[kitName]'
           group: '&eGroup: &6[group]'
@@ -2007,10 +2006,10 @@ plugins:
           ListAdd: ' &2+'
           ListAddHover: '&2Add new'
           guiClickery:
-          - '&eLeft mouse click to increase and right click to decrease'
-          - '&eHold &6Shift &eto speed process by 10 times'
-          - '&eRepeating fast clicks will speed amount change'
-          - '&eStop clicking for 1 sec to go back to default amount'
+            1: '&eLeft mouse click to increase and right click to decrease'
+            2: '&eHold &6Shift &eto speed process by 10 times'
+            3: '&eRepeating fast clicks will speed amount change'
+            4: '&eStop clicking for 1 sec to go back to default amount'
           OffHand: '&ePlace offHand item over here'
           Helmet: '&ePlace helmet item over here'
           Chest: '&ePlace chest item over here'
@@ -2018,18 +2017,18 @@ plugins:
           Boots: '&ePlace boots over here'
           Weight: '&eWeight: &6[Weight]'
           WeightExtra:
-          - '&eHigher value have bigger priority'
-          - '&eKits should be in same group'
+            1: '&eHigher value have bigger priority'
+            2: '&eKits should be in same group'
           despiteWeight: '&eShow despite weight: &6[Weight]'
           despiteWeightExtra:
-          - '&ePLayer is not getting access to kit, but can preview it'
+            1: '&ePLayer is not getting access to kit, but can preview it'
           Slot: '&eSlot: &6[slot]'
           Page: '&ePage: &6[page]'
           SlotAuto: '&6Auto'
           Clone: '&eClone items from inventory'
           CloneExtra:
-          - '&eUse right mouse button to include armors'
-          - '&eClick again to revert changes'
+            1: '&eUse right mouse button to include armors'
+            2: '&eClick again to revert changes'
           timeDelay: '&eDelay: &6[time]'
           usages: '&eCan be used for &6[times] &etimes'
           withoutUsage: '&eShow without usages left: &6[state]'
@@ -2044,19 +2043,19 @@ plugins:
           clickToSwitch: '&eClick to switch state'
           clickToEdit: '&eClick to start editing'
           editConfigName:
-          - '&eClick to rename config name'
-          - '&eThis only determines permission node'
+            1: '&eClick to rename config name'
+            2: '&eThis only determines permission node'
           editCommandName:
-          - '&eClick to rename command name'
-          - '&eThis sets command you need to use to get this kit'
+            1: '&eClick to rename command name'
+            2: '&eThis sets command you need to use to get this kit'
           displayName: '&7DisplayName: &r&f[name]'
           editDisplayName:
-          - '&eClick to change display name'
-          - '&eThis only used for visual purposes'
+            1: '&eClick to change display name'
+            2: '&eThis only used for visual purposes'
           fileName: '&7FileName: &r&f[name]'
           editFileName:
-          - '&eClick to change file name'
-          - '&eWill define where kit should be saved at'
+            1: '&eClick to change file name'
+            2: '&eWill define where kit should be saved at'
           kitGroup: '&eKit group: &6[group]'
           dropItems: '&eDrop item if full: &6[state]'
           commands: '&eCommands:'
@@ -2108,12 +2107,12 @@ plugins:
           args: ''
         info:
           List:
-          - '&7========================'
-          - '&ePlayers online &6[amount][hidden]&e/&6[maxamount]'
-          - '[adminLine]'
-          - '[staffLine]'
-          - '[groupLine]'
-          - '&7========================'
+            1: '&7========================'
+            2: '&ePlayers online &6[amount][hidden]&e/&6[maxamount]'
+            3: '[adminLine]'
+            4: '[staffLine]'
+            5: '[groupLine]'
+            6: '&7========================'
           staffL: '&7Staff: &f[list]'
           adminL: '&8Admin: &f[list]'
           hiddenPref: '&e&7[H]'
@@ -2165,7 +2164,7 @@ plugins:
           mailHover: "&e[senderName] \n&e[time]"
           mailHoverExpires: |2-
 
-            &eExpires in: &6[time]
+            '&eExpires in: &6[time]'
           mailList: ' &7[senderDisplayName]&e: [mail] '
           waitingMail: '&eYou have &6[amount] &emails. Click to check them out.'
       mailall:
@@ -2809,8 +2808,8 @@ plugins:
             (-s)'
         info:
           info:
-          - '&fLeft click to get item'
-          - '&fMiddle mouse click to detele'
+            1: '&fLeft click to get item'
+            2: '&fMiddle mouse click to detele'
           got: '&eGot &6[name] &eitem'
           give: '&eGive &6[name] &eitem'
           removed: '&eRemoved &6[name] &eitem'
@@ -2849,18 +2848,18 @@ plugins:
           edit: ' &e(Edit)'
           total: '&eChecking from [current]/[until] from total of [total]'
           Stats:
-          - '&e************************************************************'
-          - '&e* &6Chunks: &e[checked]/[total]'
-          - '&e* &6Scan range: &e[range]'
-          - '&e* &6Scan speed: &e[scanspeed] &6(&e[autospeed]&6)'
-          - '&e* &6World: &e[world]'
-          - '&e* &6Found: &e[found]'
-          - '&e* &6Time: &e[time]'
-          - '&e* &6id: &e[id]'
-          - '&e* &6Qty: &e[qty] and up'
-          - '&e* &6Name: &e[name]'
-          - '&e* &6Lore: &e[lore]'
-          - '&e************************************************************'
+            1: '&e************************************************************'
+            2: '&e* &6Chunks: &e[checked]/[total]'
+            3: '&e* &6Scan range: &e[range]'
+            4: '&e* &6Scan speed: &e[scanspeed] &6(&e[autospeed]&6)'
+            5: '&e* &6World: &e[world]'
+            6: '&e* &6Found: &e[found]'
+            7: '&e* &6Time: &e[time]'
+            8: '&e* &6id: &e[id]'
+            9: '&e* &6Qty: &e[qty] and up'
+            10: '&e* &6Name: &e[name]'
+            11: '&e* &6Lore: &e[lore]'
+            12: '&e************************************************************'
       scavenge:
         help:
           info: '&eRecycle item and its enchantments'
@@ -2884,8 +2883,8 @@ plugins:
           scavengeCost: '&8Scavenge cost: [cost]'
           moreTitle: 'Incorrect amount: [input]/[required]'
           moreLore:
-          - '&bYou need more of this item.'
-          - '&bRequires atleast &e[amount]'
+            1: '&bYou need more of this item.'
+            2: '&bRequires atleast &e[amount]'
           title: '&2Scavenger'
       schedule:
         help:
@@ -3617,8 +3616,8 @@ plugins:
           explanation: '&7One block &e60 &7seconds. Max &e600 &7seconds'
           minMax: '&7Max: [max] &7Min: [min]'
           hover:
-          - '[tpscolor][tps]'
-          - '&7[time]'
+            1: '[tpscolor][tps]'
+            2: '&7[time]'
       tree:
         help:
           info: '&eSpawn tree where you are looking'
@@ -3819,8 +3818,8 @@ plugins:
           noWarnings: '&ePlayer doesn''t have any warnings'
           list: '&7[place]. &e[time] &6by [warnedBy] &cfor: &7[warnedFor]'
           hover:
-          - '&7Expires in: &e[time]'
-          - '&7Violation points: &e[points]'
+            1: '&7Expires in: &e[time]'
+            2: '&7Violation points: &e[points]'
       warp:
         help:
           info: '&eTeleports to warp location'
@@ -3832,17 +3831,17 @@ plugins:
           noWarps: '&cThere is no saved warps'
           autoLoreName: '&7[warpName]'
           autoLoreFormat:
-          - '&7[worldName]'
-          - '&e[x]:[y]:[z]'
-          - '[creator]'
+            1: '&7[worldName]'
+            2: '&e[x]:[y]:[z]'
+            3: '[creator]'
           creator: '&eCreator: &6[creator]'
           noWarpByName: '&cThere is no warps by this name'
           noAccess: '&cNo access to this warp'
           guiTitle: '&6Warps'
           pageTitles:
-          - '&2Warps 1'
-          - '&8Warps 2'
-          - '&0Warps 3'
+            1: '&2Warps 1'
+            2: '&8Warps 2'
+            3: '&0Warps 3'
       warpgroups:
         help:
           info: '&eLists warp groups'
@@ -4232,7 +4231,7 @@ plugins:
       Pitch: '&ePitch: &6[pitch]'
       Yaw: '&eYaw: &6[yaw]'
       WorldNames:
-      - world-&2World
+        1: world-&2World
     Locations: '&7Locations: '
     command:
       help:
