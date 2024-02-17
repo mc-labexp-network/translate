@@ -282,7 +282,6 @@ plugins:
           cmdInfoFormat: '[command] &f- &e[description]'
           cmdFormat: '&6/[command]&f[arguments]'
           helpPageDescription: '&e* [description]'
-          explanation: '&e * [explanation]'
           title: '&e------ ======= &6Help&e &e======= ------'
       nocmd:
         help:
@@ -326,9 +325,6 @@ plugins:
         help:
           info: '&eAlerts administration on players login'
           args: '[add/list/remove] [playerName] (reason) (-s)'
-          explanation:
-          - '&ePermissions:'
-          - '&6command.alert.info.inform &e- to see alerts on player login'
         info:
           inform:
           - '&e!Alert!******** &6[name] &4just logged in! &e*******!Alert!'
@@ -379,14 +375,6 @@ plugins:
         help:
           info: '&eSet items repair cost'
           args: (playerName) [amount]
-          explanation:
-            1: 'Example:'
-            2: /repaircost 10
-            3: /repaircost set 10
-            4: /repaircost add 10
-            5: /repaircost take 10
-            6: /repaircost Zrips clear
-            7: /repaircost Zrips add 10
         info:
           current: '&eCurrent items base repair cost: &6[cost]&e.'
           noitem: '&cNot holding any item in hand.'
@@ -470,17 +458,6 @@ plugins:
         help:
           info: '&eAttaches command to item'
           args: '[command/-clear]'
-          explanation:
-            1: "Separate commands with;"
-            2: "You can define to run command on left or right mouse click separately with"
-            3: '!left! to perform command on left mouse click'
-            4: '!right! to perform command on right click'
-            5: '!limiteduse:[amount]! defines how many times you can use this item'
-            6: '!safelimiteduse:[amount]! will not remove item after all usages are used'
-            7: '!cc! performs command from console, requires cmi.command.attachcommand.cc permission'
-            8: '!cooldownn:[amount]! adds cooldown on item usage.'
-            9: '[interactedPlayer] inserts name of player you interacted while holding item'
-            10: Global variables working in addition with [itemUses]
         info:
           list: ' &e[id]. &6[cmd]'
           uses: '&eItem usages: &6[amount]'
@@ -524,8 +501,6 @@ plugins:
         help:
           info: '&eBan player'
           args: '[playerName] (reason) (-s)'
-          explanation:
-          - cmi.command.ban.bypass - to bypass ban
         info:
           message: '&cYou are banned from this server!'
           reason: '&6Reason: &e[reason]'
@@ -544,9 +519,6 @@ plugins:
         help:
           info: '&eSends special message to all players on all servers'
           args: (!) [message] (-s:[serverName,serverName])
-          explanation:
-          - If message starts with ! then clean message will be shown
-          - Servers can be defined to broadcast messages only in those servers
         info:
           format: '&e[&4Broadcast&e] &2[message]'
       blockcycling:
@@ -595,40 +567,10 @@ plugins:
           args: '[playerName/all] (-sec:[seconds])(-t:[timeToKeepFor]) (-n:nameOfBar)
             (-p:[maxValue/current]) (-c:[color]) (-s:[1,6,10,12,20]) (-cmd:"command;;command2")
             (-pcmd:"command;;command2") (-a:[ticks]) [message] (-cancel:nameOfBar)'
-          explanation:
-            1: PlaceHolderAPI is supported for progression and text it self
-            2: Time is defined in regular way, like 1s is one second and 1m is one minute.
-              This will determine for how long to keep bar shown for player before automatically
-              hiding
-            3: nameOfBar is option and when defining same one, then current bar will update
-              with new information
-            4: 'colors can be: red, green, pink, purple, white, yellow'
-            5: max and current values determines bar fillup, PlaceHolderAPI variables can
-              be used for dynamic updates
-            6: 'Examples:'
-            7: /cmi bossbar Zrips BossBarTitle
-            8: /cmi bossbarmsg all -t:1s -p:%server_max_players%/%server_online% -n:testbar
-              -c:red &2Title of bar %server_online%/%server_max_players% &e%cmi_user_name%
-            9: /cmi bossbarmsg all -p:+1 -n:testbar - will add one percent towards current
-              progresion bar by name
-            10: /cmi bossbarmsg all -p:-1 -n:testbar - will take out one percent from current
-              progresion bar by name
-            11: /cmi bossbarmsg all -s:10 -n:testbar - will set bossbar style to 10 segments
-              by bar name
-            12: /cmi bossbarmsg all -sec:5 - will count for 5 seconds from 0 to 5
-            13: /cmi bossbarmsg all -sec:-5 - will count for 5 seconds from 5 to 0
-            14: '-cmd: will perform commands ether for single player if target is specific
-              player or only once if its for everyone (all). This will not translated variables
-              lie [playerName] if used with ''all'' variable. Use -pcmd: instead'
-            15: '-pcmd: will perform commands on each player if target is ''all'''
-            16: https://www.zrips.net/cmi/commands/bossbarmsg-handling/
       broadcast:
         help:
           info: '&eSends special message to all players'
           args: (!) [message] (-w:[worldName,worldName]) (-r:[range]) (-c:[world;x;y;z])
-          explanation:
-            1: If message starts with ! then clean message will be shown
-            2: Worlds can be defined to broadcast messages only in those worlds
         info:
           format: '&e[&4Broadcast&e] &2[message]'
       burn:
@@ -711,8 +653,6 @@ plugins:
         help:
           info: '&eSearch for a players other accounts'
           args: (playerName/ip)
-          explanation:
-          - 'Extra permission: cmi.command.checkaccount.showip'
         info:
           place: '&e[place]. &6'
           ip: '&6[ip]&e: '
@@ -779,13 +719,6 @@ plugins:
         help:
           info: '&eClear players inventory'
           args: (playerName) (item(:amount)(;data)) (-s) (+clearType)
-          explanation:
-            1: 'Possible clearTypes: quickbar, inventory, partinventory, weapons, armorslots,
-              tools, armors, mainhand, offhand'
-            2: Should start with + sign
-            3: Multiple types can be used
-            4: cmi clear +armors - will remove armor type items
-            5: cmi clear +armorslots - will remove items from armorslots
         info:
           clearFeedback: '&eYou have removed &6[amount] &eitems from &3[playerDisplayName]&e
             inventory (&3[offon]&e).'
@@ -795,9 +728,6 @@ plugins:
         help:
           info: '&eClears chat'
           args: (self) (-s)
-          explanation:
-            1: 'Permission:'
-            2: ' &6cmi.command.clearchat.bypass &e- to ignore chat cleaning'
         info:
           information: '&eChat was cleared by &6[senderDisplayName]'
       clearender:
@@ -850,11 +780,6 @@ plugins:
         help:
           info: '&eSet players compass point to your location'
           args: (targetName) (sourceName) (x) (z) (worldname) (reset) (-s)
-          explanation:
-            1: 'Example: /cmi compass Zhax'
-            2: /cmi compass Zhax Zrips
-            3: /cmi compass Zhax LT_Craft 0 0 -s
-            4: /cmi compass reset Zhax
         info:
           wrongworld: '&cYour defined world dont exist!'
           feedback: '&eYou have set &3[playerDisplayName] &ecompass arrow to &3[sourceDisplayName]
@@ -880,15 +805,6 @@ plugins:
           info: '&eStarts counter for surrounding players'
           args: '[join/leave/start] (t:time) (r:[range/-1]) (c:[world:x:y:z]) (msg:custom_message)
             (-f)'
-          explanation:
-            1: '&ePermissions:'
-            2: '&6cmi.command.counter.force &e- to force counter for everyone in range '
-            3: '&6cmi.command.counter.time &e- define custom time range '
-            4: '&6cmi.command.counter.range &e- to define custom range'
-            5: '&6cmi.command.counter.msg &e- to define custom message'
-            6: '&6cmi.command.counter.autojoin &e- joins counter automatically'
-            7: -f will force counter to all players in range
-            8: 'Example: /cmi counter start r:30 t:7 msg:&eCustom_message -f'
         info:
           join: '&eJoined counter'
           leave: '&eLeft counter'
@@ -919,8 +835,6 @@ plugins:
         help:
           info: '&eSend tellraw type message'
           args: '[playerName/all] [formattedMessage]'
-          explanation:
-            1: Usage is same as shown in https://www.zrips.net/cmi/custom-text/ aka customtext command
       ctext:
         help:
           info: '&eShows custom text'
@@ -1013,8 +927,6 @@ plugins:
         help:
           info: '&eManage dynamic signs'
           args: (new)
-          explanation:
-          - Look at sign and perform /cmi dsign new
         info:
           howTo: '&cThis is not dynamic sign, to create new perform &e/cmi dsign new'
           gui: '&7---- &f<Open gui> &7----'
@@ -1124,15 +1036,6 @@ plugins:
         help:
           info: '&eAdds potion effect to player. use clear to remove all effects'
           args: '[playername/all] [effect/clear] (duration) (multiplier) (-s) (-visual)'
-          explanation:
-            1: -visual will add visible bubbles and icon on top right corner
-            2: 'Examples:'
-            3: /cmi effect zrips nightvision 60 1 - will give 60 sec night vision for Zrips
-            4: /cmi effect zrips nightvision +10 - will add 10 sec to current night vision
-              time
-            5: /cmi effect zrips nightvision -10 - will take out 10 sec from current night
-              vision time
-            6: /cmi effect all health_boost 60 1 - will boost hp by 1 for everyone online
         info:
           feedback: '&ePotion effect &6[effect] &eadded to &3[playerDisplayName]&e for
             &6[sec]sec&e with power of &6[power] &e(&3[offon]&e).'
@@ -1142,8 +1045,6 @@ plugins:
           info: '&eEnchant items'
           args: (playerName) [enchant] [level] (-o) (-onlyvalid) (-keeponlyvalid) (-inform)
             (-s) (-i:[itemName(:data)]) (clear)
-          explanation:
-            1: -o will take item from offhand
         info:
           feedback: '&eYou have enchanted item with &3[enchant]:[level]&e enchantment
             for &3[playerDisplayName]'
@@ -1164,9 +1065,6 @@ plugins:
         help:
           info: '&eOpens players ender chest'
           args: (playerName) (playerName)
-          explanation:
-            1: cmi.command.ender.preventmodify - prevents inventory modifications
-            2: cmi.enderedit - allows to edit opened inventory
         info:
           title: '&8[playerDisplayName] Ender Chest'
           feedback: '&eYou are editing &3[playerDisplayName] &eenderchest (&3[offon]&e).'
@@ -1201,15 +1099,6 @@ plugins:
           info: '&eSet players exp. Use L to set levels'
           args: '[playerName] [add/set/take/clear] [amount][%rand/10-20%][1%[min-max]][playerName]]
             (-s)'
-          explanation:
-            1: 'Example:'
-            2: /exp 10
-            3: /exp add 10
-            4: /exp set 10L
-            5: /exp take 10
-            6: /exp Zrips clear
-            7: /exp Zrips add 10
-            8: /exp Zrips add 10%[10-50]
         info:
           current: '&e[playerDisplayName] &eis at &6[lvl]&elvl with &6[currentExp]&eexp
             or with &6[exp]&eexp in total.'
@@ -1250,21 +1139,6 @@ plugins:
         help:
           info: '&eScans for damaged chunks'
           args: '&ew &6[worldName]&e r &6[range in chunks]&e c &6[x:z]&e '
-          explanation:
-            1: '&6SubCommands:'
-            2: '- &6stats &e- show current scanning stats'
-            3: '- &6pause &e- pause scanning'
-            4: '- &6continue &e- continue scanning'
-            5: '- &6stop &e- stop scanning'
-            6: '- &6stopall &e- stop all scanning'
-            7: '- &6speed [amount] &e- set current scan speed'
-            8: '- &6autospeed [true/false] &e- set autospeed turned off or on'
-            9: '- &6messages [true/false] &e- set message output to off or on'
-            10: 'Example:'
-            11: /fixchunk w LT_Craft
-            12: /fixchunk w LT_Craft r 50 c 1024:-2048
-            13: /fixchunk w LT_Craft r g
-            14: /fixchunk fix
         info:
           startScanning: '&eFound &6[amount] &echunks to check. Starting!'
           paused: '&eScanning paused, to continue use &6/cmi fixchunk continue.'
@@ -1359,11 +1233,6 @@ plugins:
         help:
           info: '&eGive item to player'
           args: (playerName) [itemdata/hand] (playerName) (-slot:[number]) (unstack) (-s)
-          explanation:
-            1: |-
-              Example: /cmi give diamondsword;{#Gray}My_Uber_Sword;&2Goblin_Slayer!
-              {#pink}With_Love!;sharpness:3,durability:3;hideenchants
-            2: <T>More information at www.zrips.net/cmi/commands/icwol/</T><URL>https://www.zrips.net/cmi/commands/icwol/</URL>
         info:
           feedback: '&6Giving &e[amount] &6of &e[itemname] &6(&e[customitemname]&6) to
             &e[playerDisplayName]'
@@ -1374,19 +1243,6 @@ plugins:
         help:
           info: '&eGive item for all players'
           args: '[itemname] (amount) (e|l|n|offline)'
-          explanation:
-            1: '&e- give item name or its id with data value'
-            2: '&e- optionaly provide amount you want to give '
-            3: '&e- &6n &e- to define itemname '
-            4: '&e- &6l &e- to define item lore '
-            5: '&e- &6e &e - to define item enchants '
-            6: '&e- &6-s &e - wont show feedback message '
-            7: '&e- &6h &e - followed with player name will give item from its hand '
-            8: '&e- &6inv &e - followed by player name will give entire inventory for others '
-            9: '&e- &6offline &e- to include offline players'
-            10: '&ecmi giveall stone 1 n &2Uber_stone l &3Stone_lore offline'
-            11: '&ecmi giveall h Zrips'
-            12: '&ecmi giveall inv Zrips'
         info:
           starting: '&6Starting to give items for all players, this can take some time.'
           running: '&6[amount] already got item, still running.'
@@ -1395,10 +1251,6 @@ plugins:
         help:
           info: '&eSet players glow mode'
           args: (playerName) [true/false/color/gui]
-          explanation:
-            1: 'Example: /glow Zrips red'
-            2: 'Permissions: cmi.command.glow.color.[color] - allows to set particular glow
-              color'
         info:
           feedback: '&eYou have set [color]glow &eto &3[boolean]&e for &3[playerDisplayName]&e
             (&3[offon]&e).'
@@ -1434,14 +1286,6 @@ plugins:
           info: '&eClears server from unnecessary items'
           args: (+cb) (+cm) (+ci) (+b) (+sh) (+tnt) (+all) (+fl) (+named) (-w:[worldName])
             (-s)
-          explanation:
-            1: +cm will include minecarts into cleaning
-            2: +cb will include boats into cleaning
-            3: +sh will include shulker box into cleaning
-            4: +ci defines if you want to include weapons and armors
-            5: +tnt defines if you want to include primed tnt
-            6: +named removes items with custom name or lore
-            7: +b broadcasts clear message to everyone
         info:
           removed: '&eRemoved -[list]'
           items: ' &eItems: &6[items]'
@@ -1495,8 +1339,6 @@ plugins:
         help:
           info: '&eSends message for help to staff members'
           args: '[message]'
-          explanation:
-          - Requires cmi.command.helpop.inform too see messages
         info:
           message: '&c[Help]&4[&7[senderDisplayName]&4]&r&c [message]'
           feedback: '&c[Help]&7Your question was submitted to online staff'
@@ -1709,8 +1551,6 @@ plugins:
         help:
           info: '&eIgnores player'
           args: (playerName/uuid/all) (-p:[playerName])
-          explanation:
-          - cmi.command.ignore.bypass - to bypass ignore list
         info:
           self: '&cDon''t be silly, you can''t ignore yourself'
           added: '&eYou''re now ignoring &6[playerDisplayName]'
@@ -1870,10 +1710,6 @@ plugins:
         help:
           info: '&eOpens players inventory'
           args: '[playerName]'
-          explanation:
-          - cmi.command.inv.preventmodify - prevents inventory editing
-          - cmi.invedit - allows to edit inventory
-          - cmi.command.inv.location - shows players location
         info:
           feedback: '&eYou are editing &3[playerDisplayName] &einventory (&3[offon]&e).'
       invcheck:
@@ -1906,8 +1742,6 @@ plugins:
         help:
           info: '&eBan ip'
           args: '[ip/playerName] (reason) (-s)'
-          explanation:
-          - cmi.command.banip.bypass - to bypass ban
         info:
           message: '&cYou are ip banned from this server!'
           messageToAll: '&6[playerDisplayName] &egot ip banned by &6[senderDisplayName]
@@ -1930,18 +1764,6 @@ plugins:
         help:
           info: '&eGive item to yourself'
           args: '[itemname] (amount)'
-          explanation:
-          - Name and lore supports placeholders
-          - 'Example: /give stone'
-          - /give stone 5 n Stonehenge
-          - /give stick e knockback:1
-          - /give sponge l Got_item_on:_%date/YY/MM/dd-HH:mm:ss%
-          - /cmi give sponge 1 e Knockback:%rand/1-5%
-          - /cmi give sponge %rand/1-10%
-          - /give sponge a maxhealth:5:mainhand
-          - /give diamond_sword unbreakable
-          - /give mob_spawner:creeper
-          - /give minecraft:diamond_helmet 1 0 {ench:[{id:0,lvl:100},{id:2,lvl:100},{id:34,lvl:100}]}
       itemcmdata:
         help:
           info: '&eCheck or modify items custom model data'
@@ -2069,8 +1891,6 @@ plugins:
         help:
           info: '&eKick player with custom message'
           args: '[playerName/all] (message) (-s)'
-          explanation:
-          - cmi.command.kick.bypass - prevents from being kicked out
         info:
           defaultMessage: '&eKicked from server'
           cantKick: '&eCan''t kick this player'
@@ -2107,12 +1927,6 @@ plugins:
         help:
           info: '&eGives predefined kit.'
           args: '[kitName] (playerName) (-s) (-open) (-preview)'
-          explanation:
-          - '&ePermissions:'
-          - '&6cmi.kit.[kitName] &e- allows to use particular kit'
-          - '&6cmi.kit.bypass.money &e- bypass money requirement'
-          - '&6cmi.kit.bypass.exp &e- bypass exp requirement'
-          - '&6cmi.kit.bypass.onetimeuse &e- bypass one time use'
           - '&6/cmi kit [kitName] [playerName] &e- will give kit to another player'
         info:
           noMoney: '&eNot enough money. Cost: &6[cost] &eyou have &6[balance]'
@@ -2160,12 +1974,6 @@ plugins:
         help:
           info: '&eKit editor.'
           args: ''
-          explanation:
-          - '&ePermissions:'
-          - '&6cmi.kit.[kitName] &e- allows to use particular kit'
-          - '&6cmi.kit.bypass.money &e- bypass money requirement'
-          - '&6cmi.kit.bypass.exp &e- bypass exp requirement'
-          - '&6/cmi kiteditor &e- shows kit list'
         info:
           kits: '&eKits: '
           iconSet: '&eNew icon set for &6[kitname] &ekit'
@@ -2282,19 +2090,6 @@ plugins:
           info: '&eLaunch at direction you are looking or at angle'
           args: (playerName) (p:[power]) (a:[angle]) (d:[direction]) (loc:[x]:[y]:[z])
             (-nodamage)
-          explanation:
-          - cmi launch - will launch at direction you are looking
-          - cmi launch -nodamage - will launch and prevent damage on fall
-          - cmi launch p:3.2 - will launch with power of 3.2
-          - cmi launch p:2.5 a:25 - will launch at direction you are looking with angle
-            of 25 dgrees and with power of 2.5
-          - cmi launch Zrips d:east - will launch to east direction same angle you are
-            looking
-          - cmi launch Zrips d:0 - will launch at 0 degrees direction (south) same angle
-            you are looking
-          - cmi launch d:45 a:30 p:2 - will launch south-west at 30 degree angle with
-            power of 2
-          - cmi launch loc:150:120:123 - will launch player to target location
         info:
           feedback: '!actionbar!&6[&fWhoosh!&6]'
       lfix:
@@ -2311,12 +2106,6 @@ plugins:
         help:
           info: '&eShows online player list'
           args: ''
-          explanation:
-          - 'Perm: '
-          - cmi.command.list.admin
-          - cmi.command.list.staff
-          - cmi.command.list.hidden
-          - cmi.command.list.group.[number]
         info:
           List:
           - '&7========================'
@@ -2391,8 +2180,6 @@ plugins:
         help:
           info: '&eSet server into maintenance mode'
           args: (true/false) (message)
-          explanation:
-          - cmi.command.maintenance.bypass - to bypass maintenance mode
         info:
           feedback: '&eServer is in maintenance mode. Come back later.'
           set: '&eServer maintenance mode set to &6[state] &ewith message: [message]'
@@ -2407,9 +2194,6 @@ plugins:
         help:
           info: '&eChanges maximum amount of players who can connect to server'
           args: '[amount]'
-          explanation:
-          - '&ePermissions: '
-          - '&6cmi.fullserver.bypass &e- join full server'
         info:
           changed: '&eChanged max allowed players from &6[old] &eto &6[new]&e. Online:
             &6[current]'
@@ -2509,21 +2293,12 @@ plugins:
         help:
           info: '&eFills item stack to maximum amount'
           args: (playerName) (-clone/[amount])
-          explanation:
-          - '&ePermissions:'
-          - ' &6cmi.command.more.oversize &e- to get oversized stacks'
         info:
           feedback: '&eFilled stack to &3[amount]&e for &3[playerDisplayName]&e (&3[offon]&e).'
       msg:
         help:
           info: '&eSends message to player'
           args: '[playerName] [message]'
-          explanation:
-          - If message starts with ! then clean message without sender name will be shown
-          - Requires cmi.command.msg.clean permission
-          - If message starts with !- then clean message without sender name will be shown
-            and without option to reply
-          - Requires cmi.command.msg.noreply permission
         info:
           TargetMsg: '&7[&8[senderDisplayName] &7-> &8me&7]&r&f [message]'
           SenderMsg: '&7[&8me &7-> &8[playerDisplayName]&7]&r&f [message]'
@@ -2533,11 +2308,6 @@ plugins:
         help:
           info: '&eMute player'
           args: '[playerName] (time) (-s) (reason)'
-          explanation:
-          - 'Examples: '
-          - /cmi mute zrips 1m
-          - /cmi mute zrips 1h
-          - /cmi mute zrips 1h For swearing
         info:
           mutedFor: '&e[playerDisplayName] muted for &6[time]'
           muted: '&eYou are muted for &6[time]'
@@ -2547,10 +2317,6 @@ plugins:
         help:
           info: '&ePrevent public messages'
           args: (time) (-s) (reason)
-          explanation:
-          - 'Examples: '
-          - /cmi mutechat 1m
-          - '/cmi mutechat 1h '
         info:
           mutedFor: '&ePublic chat muted for &6[time]'
           isMuted: '!actionbar!&ePublic chat is muted for &6[time]'
@@ -2560,8 +2326,6 @@ plugins:
           info: '&eSet players name plate prefix, suffix or its color'
           args: (playerName) (-pref:[some_prefix]) (-suf:[some_suffix]) (-c:[colorCode])
             (reset)
-          explanation:
-          - Use _ to add space and __ to add underscore for placeholder and similar
         info:
           feedback: '&eYou have updated nameplate for &3[playerDisplayName]&e (&3[offon]&e).'
           targetfeedback: '&eYour nameplate got updated'
@@ -2578,9 +2342,6 @@ plugins:
         help:
           info: '&eChanges player name'
           args: '[newNickName/off] (playerName) (-s)'
-          explanation:
-          - 'To change into different nick name: cmi.command.nick.different'
-          - To bypass length protection use cmi.command.nick.bypass.length
         info:
           changed: '&eNickName changed to &r[newNickName] &efrom &r[oldNickName]'
           changedTarget: '&eYour nickName changed to &r[newNickName] &eby &r[senderDisplayName]'
@@ -2623,10 +2384,6 @@ plugins:
         help:
           info: '&eModify personal options'
           args: (playerName) (option) (enable/disable/toggle/status) (-s)
-          explanation:
-          - 'Posible actions: visibleHolograms, shiftSignEdit, totemBossBar, bassBarCompass,
-            tagSound, chatSpy, cmdSpy, signSpy, acceptingPM, acceptingTPA, acceptingMoney,
-            chatbubble'
         info:
           title: '&8Options'
           state: '&2State: [state]'
@@ -2653,8 +2410,6 @@ plugins:
         help:
           info: '&ePlay custom particle animation'
           args: (variable/playerName/stopAll) (stop)
-          explanation:
-          - Information on usage can be found at https://www.zrips.net/cmi/extra/particles/
       patrol:
         help:
           info: '&ePatrol'
@@ -2793,17 +2548,6 @@ plugins:
         help:
           info: '&eControls player personal time'
           args: (freeze/unfreeze/day/night/dusk/morning/realtime/reset) (playerName) (-s)
-          explanation:
-          - 'Example:'
-          - /ptime 13:00:00
-          - /ptime 1pm
-          - /ptime 13
-          - /ptime 7000ticks
-          - /ptime Zrips 1pm
-          - /ptime freeze
-          - /ptime unfreeze
-          - /ptime realtime
-          - /ptime reset
         info:
           check: '&ePersonal Time: &6[24h] &eor &6[12h] &eor &6[ticks]ticks'
           frozen: ' &c(-)'
@@ -2831,10 +2575,6 @@ plugins:
         help:
           info: '&eDecrease your rank'
           args: (playerName) (rankName) (confirm) (-cmd) (-cost)
-          explanation:
-          - -cmd will perform command defined for previous rank rankup
-          - -cost will charge player with money, exp or items if defined for previous
-            rank rankup
         info:
           noPrev: '&eCan''t find any previous ranks'
           list: '&ePick one rank you want to &crankdown &eto: '
@@ -2894,12 +2634,6 @@ plugins:
         help:
           info: '&eSet a players rank'
           args: (playerName) [rankName] (-cmd) (-cost)
-          explanation:
-          - -cmd will perform command defined for that rank rankup
-          - -cost will charge player with money, exp or items if defined for that rank
-            rankup
-          - player will get rank even if he doesnt have enough money, exp or required
-            items
         info:
           set: '&eRank changed for &6[playerDisplayName] &eto &6[rankName]'
       rankup:
@@ -2974,12 +2708,6 @@ plugins:
         help:
           info: '&eRepair items'
           args: '[hand/armor/all] (playerName)'
-          explanation:
-          - cmi.command.repair.hand - allows a user to repair items in their hand
-          - cmi.command.repair.armor - allows a user to repair items in armor slots
-          - cmi.command.repair.all - allows a user to repair their whole inventory
-          - cmi.command.repair.repairshare.bypass - allows a user to repair items without
-            adding repair share protection
         info:
           feedback: '&eYou have repaired &3[amount]&e items for &3[playerDisplayName]&e
             (&3[offon]&e).'
@@ -3001,19 +2729,6 @@ plugins:
           info: '&eReplaces blocks in current world around you'
           args: '&eid &6[blockName:data/id:data]&e w &6[blockName:data/id:data] &er &6[range
             in chunks/g]&e y &6[max height]'
-          explanation:
-          - '&6SubCommands:'
-          - '&e- &6pause &e- pause replacing'
-          - '- &6continue &e- continue replacing'
-          - '- &6stop &e- stop replacing'
-          - '- &6speed [amount] &e- set current replace speed'
-          - '- &6autospeed [true/false] &e- set autospeed turned off or on'
-          - '- &6messages [true/false] &e- set message output to off or on'
-          - 'Example:'
-          - /cmi replaceblock id 52 w stone r 10
-          - /cmi replaceblock id 52,gold_block w stone r 15 y 100
-          - /cmi replaceblock id 52 w air r g y 100
-          - /cmi replaceblock id iron_ore%75 w stone%90,dirt%5 r g
         info:
           startScanning: '&eFound &6[amount] &echunks to check. Starting!'
           paused: '&eReplacing paused, to continue use &6/cmi blockreplace continue.'
@@ -3048,8 +2763,6 @@ plugins:
         help:
           info: '&eRide target entity'
           args: ''
-          explanation:
-          - ' cmi.command.ride.[entityType] - to have access in riding entity'
         info:
           riding: '&eYou are riding &6[entityName]'
           cantRide: '&cYou cant ride (&6[entityName]&c) entity'
@@ -3085,8 +2798,6 @@ plugins:
         help:
           info: '&eSaves every player inventory'
           args: (daysRange/-online)
-          explanation:
-          - -online variable can be used to save only online player inventories
         info:
           saving: '[symbol] &2checked: &e[checked]&2 from &e[total]&2 saved: &e[saved]
             &2skipped: &e[skipped] [simbol]'
@@ -3120,31 +2831,6 @@ plugins:
         help:
           info: '&eScans for items in current world'
           args: ''
-          explanation:
-          - '&6SubCommands:'
-          - '&e- &6stats &e- show current scanning stats '
-          - '&e- &6pause &e- pause scanning '
-          - '- &6continue &e- continue scanning '
-          - '- &6stop &e- stop scanning '
-          - '- &6stopall &e- stops all active scans '
-          - '- &6speed [amount] &e- set current scan speed '
-          - '- &6autospeed [true/false] &e- set AutoSpeed turned off or on '
-          - '- &6messages [true/false] &e- set message output to off or on'
-          - 'Variables:'
-          - '&eid &6[id:data]'
-          - '&eq &6[minimum quantity]'
-          - '&er &6[range in chunks] &e- option to use &6g &einstead of number to scan
-            entire map'
-          - '&en &6[item name]'
-          - '&el &6[item lore]'
-          - '&eh &6uses info from item in hand'
-          - '&ee &6[enchantname]'
-          - '&eelvl &6[enchantminlevel]'
-          - '&eoversize'
-          - '&epurge - removed found items, this feature should be enabled in config file'
-          - 'Example:'
-          - /scan id 52 r 30
-          - scan id diamond_block r g q 32
         info:
           loadingChunkInfo: '&eLoading chunk information!'
           startScanning: '&eFound &6[amount] &echunks to check. Starting!'
@@ -3209,28 +2895,11 @@ plugins:
         help:
           info: '&eChanges sign text line.'
           args: (SignLine) [Text]
-          explanation:
-          - Use \n for additional line
       search:
         help:
           info: '&eSearch items/enchants/fly/maxhp/gm/oversize modes and other stuff from
             all users'
           args: ''
-          explanation:
-          - '&eid &6[id:data] '
-          - '&ename &6[some_custom_itemname] '
-          - '&elore &6[some_custom_lore] '
-          - '&eenchant &6[lowest enchant level] '
-          - '&epotion &6[lowest custom potion effect level] '
-          - '&efly &6[true or false] '
-          - '&egm &6[0/1/2/3 or survival/creative/adventure/spectator] '
-          - '&emaxhp &6[lowest hp player have] '
-          - '&egod &6[true/false]'
-          - '&eoversize'
-          - 'Example:'
-          - /search gm 1
-          - /search id 52
-          - /search lore Uber_lore
         info:
           started: '&eSearching '
           current: '&eCurrently found &3[amount] &efrom &3[files] &echecked files'
@@ -3308,10 +2977,6 @@ plugins:
           info: '&eSets home location'
           args: (homeName) (playerName) (-p) (-l:worldName;x;y;z) (block/Material) (slotNumber)
             (-overwrite)
-          explanation:
-          - cmi.command.sethome.unlimited
-          - -l will define custom location for new home location, this requires cmi.command.sethome.customloc
-            permission node
         info:
           set: '&eYou correctly created the home with name of &6[homeName]&e!'
           setBed: '&eCreated bed respawn location'
@@ -3331,9 +2996,6 @@ plugins:
         help:
           info: Set server motd
           args: '[newMotd] (-s)'
-          explanation:
-          - use \n to make second line
-          - use _ to create space, if you need more than one use _ followed with space
         info:
           changed: '&eChanged motd to:'
       setrt:
@@ -3349,8 +3011,6 @@ plugins:
           info: '&eSets spawn command teleport point'
           args: (playerName) (true/false) (-g:[groupName]) (-rng:[range]) (-w:world,world_nether)
             (-loc:[world;x;y;z;yaw;pitch])
-          explanation:
-          - More info on command usage at https://www.zrips.net/cmi/commands/spawn/
         info:
           feedback: '&6Spawn point set ([world],[x],[y],[z])!'
           group: ' &e([group])'
@@ -3361,18 +3021,6 @@ plugins:
           info: '&eSets warp location'
           args: '[warpName] (reqPermission) (hand/head/head:[playerName]) (slot) (autoLore)
             (-g:[groupName]) (world;x;y;z;yaw;pitch) (-confirm)'
-          explanation:
-          - 'Examples:'
-          - /cmi setwarp spawn - simple warp to spawn
-          - /cmi setwarp spawn true - creates warp and will require cmi.command.warp.[warpname]
-            permission node to use it
-          - /cmi setwarp spawn hand - creates warp will take item from hand to display
-            in gui for this warp
-          - /cmi setwarp spawn 13 - creates warp and sets gui slot to be used in gui (1-54)
-          - /cmi setwarp spawn true hand 13 - creates warp with icon from hand, slot 13
-            and requires permission
-          - /cmi setwarp spawn true hand 13 false - same as previous, but doesn't generate
-            lore
         info:
           newSet: '&eNew warp (&6[warp]&e) set'
           noSet: '&cWarp with this name already exists'
@@ -3415,8 +3063,6 @@ plugins:
         help:
           info: '&eBlocks public messages'
           args: ''
-          explanation:
-          - cmi.command.silence.bypass - to bypass silence
         info:
           enabled: '&eSilence mode &2Enabled'
           disabled: '&eSilence mode &cDisabled'
@@ -3425,9 +3071,6 @@ plugins:
         help:
           info: '&eToggles silent chest'
           args: ''
-          explanation:
-          - '&ePlayers arround you wont see chest opening animation when you opening chest'
-          - '&eProtocollib required for this feature to work.'
         info:
           feedback: '&eYou toggled silent chest mode to &3[offon].'
           onOpen: '&eOpening chest, silently.'
@@ -3516,9 +3159,6 @@ plugins:
         help:
           info: '&eSpawns entity at your location'
           args: '[EntityType]'
-          explanation:
-          - 'Example: /cmi spawnmob sheep:adult:rainbow 3 sp:5'
-          - <T>More information at www.zrips.net/cmi/commands/spawnmob/</T><URL>https://www.zrips.net/cmi/commands/spawnmob/</URL>
         info:
           wrongEntityName: '&eIncorrect entity name'
           spawnedEntities: '&eSpawned &6[entities] &eentities '
@@ -3730,8 +3370,6 @@ plugins:
         help:
           info: '&eForce another player to perform command'
           args: '[playerName] (command/c:[text])'
-          explanation:
-          - cmi.command.sudo.bypass - protects player from being 'trolled'
         info:
           performed: '&ePerformed ''&6[command]&e'' command as &6[playerDisplayName] &eplayer'
       suicide:
@@ -3746,9 +3384,6 @@ plugins:
         help:
           info: '&eSwitch all data from one player to another'
           args: '[sourcePlayerName/uuid] [targetPlayerName/uuid]'
-          explanation:
-          - Use UUID for more accurate transfers, especially when usernames matching each
-            other
         info:
           same: '&eProvided target and source users are same already'
           transferred: '&6[sourceName] &edata got switched with &6[Name]'
@@ -3763,12 +3398,6 @@ plugins:
         help:
           info: '&eTempBan player'
           args: '[playerName] [timeValue] (reason) (-s)'
-          explanation:
-          - Ban max range depends on cmi.command.tempban.max.[amount]
-          - cmi.command.tempban.max.unlimited - allows to ban for as much as you want
-          - In case player doesn't have any, 60 sec will be max value
-          - 'Example: '
-          - /cmi tempban zrips 5m For swearing
         info:
           message: '&cTemporarily Banned!'
           messageToAll: '&6[playerDisplayName] &egot tempbanned by &6[senderDisplayName]
@@ -3782,8 +3411,6 @@ plugins:
         help:
           info: '&eTemp ban ip'
           args: '[ip/playerName] [time] (reason) (-s)'
-          explanation:
-          - cmi.command.banip.bypass - to bypass ban
         info:
           message: '&cTemporarily IP Banned!'
           messageToAll: '&6[playerDisplayName] &7got temp ip banned for &7[time]&7by &6[senderDisplayName]&7:
@@ -3794,12 +3421,6 @@ plugins:
         help:
           info: '&eSet temporary players fly mode until relog or until time ends'
           args: (playerName) (timeInSec) (-s)
-          explanation:
-          - 'Examples:'
-          - tfly Zrips 30 - fly mode for the next 30 sec
-          - tfly Zrips +30 - adds fly mode for an additional 30 sec
-          - tfly Zrips 0 - fly mode until relog
-          - tfly Zrips - check if player have tfly mode enabled and until when
         info:
           setTimedFly: '&eYou have set &6[playerDisplayName]&e temporary fly for the next
             [time]'
@@ -3822,11 +3443,6 @@ plugins:
         help:
           info: '&eSet players temporarily god mode until relog or time end'
           args: '[playerName] &3(timeInSec) (-s)'
-          explanation:
-          - 'Examples:'
-          - tgod Zrips 30 - god mode for the next 30 sec
-          - tgod Zrips 0 - god mode until relog
-          - tgod Zrips - check how long a player has tgod for, if at all.
         info:
           setTimedGod: '&eYou have set &6[playerDisplayName]&e temporary god for the next
             [time]'
@@ -3845,22 +3461,6 @@ plugins:
         help:
           info: '&eControls server time'
           args: (time) (world) (alter [value]) (-smooth)
-          explanation:
-          - 'Example:'
-          - /day
-          - /night
-          - /time 13:00:00
-          - /time 1pm
-          - /time 13
-          - /time 7000ticks
-          - /time 1pm Lt_Craft
-          - /time 1pm all
-          - /time add 0:30
-          - /time take 0:30
-          - /time freeze
-          - /time unfreeze
-          - /time realtime
-          - /time autorealtime start/stop
         info:
           check: '&eTime: &6[24h] &eor &6[12h] &eor &6[ticks]ticks &ein &6[world]'
           frozen: ' &c(-)'
@@ -3953,9 +3553,6 @@ plugins:
         help:
           info: '&eTeleports ALL players from specific world'
           args: '[worldName] (worldName;x;y;z(;yaw;pitch)) (-a)'
-          explanation:
-          - -a variable will teleport everyone who are in no longer existing world to
-            target location
         info:
           started: '&eTeleportations started!'
           current: '&eCurrently teleported &7[amount] &eand &7[files] &echecked files'
@@ -4064,8 +3661,6 @@ plugins:
         help:
           info: '&eUnloads chunks from server memory'
           args: (-f)
-          explanation:
-          - -f variable will force for all chunks to be unloaded in one go.
         info:
           removed: '&eRemoved -[list]'
           startScanning: '&eFound &6[amount] &echunks to unload. Starting!'
@@ -4091,9 +3686,6 @@ plugins:
         help:
           info: '&eManage players meta data'
           args: '[playerName] [add/remove/clear/list/increment] (key) (value) (-s)'
-          explanation:
-          - Any set meta can be displayed with %cmi_user_meta_[key]% placeholder around
-            plugin
         info:
           added: '&eAdded meta for &6[playerDisplayName] &ewith key as &6[key] &eand value
             as &6[value]'
@@ -4175,13 +3767,6 @@ plugins:
         help:
           info: '&eManage players votes'
           args: (playerName) [add/set/take/clear] [amount] (-s)
-          explanation:
-          - 'Example:'
-          - /voteedit Zrips
-          - /voteedit add 10
-          - /voteedit take 10
-          - /voteedit Zrips clear
-          - /voteedit Zrips add 10
         info:
           currentVotes: '&e[playerDisplayName] &ehas &6[votes] &evotes'
           selfFeedback: '&eVotes was set to &3[votes] &efor &3[playerDisplayName]&e (&3[offon]&e).'
@@ -4268,17 +3853,6 @@ plugins:
         help:
           info: '&eControls server weather'
           args: (sun/rain/storm) (lock/duration) (worldName/all)
-          explanation:
-          - 'Extra time formats can have: s/m/h/d/w/M/Y'
-          - 'Example:'
-          - /sun
-          - /rain
-          - /storm
-          - /sun lock
-          - /sun 120
-          - /sun Lt_Craft
-          - /sun 1h
-          - /sun 10m
         info:
           setTo: '&eSet &6[world] &eweather to &6[weather] &efor next &6[time]'
           currentState: '&6[world] &e-> &6[weather] &efor next &6[time]'
@@ -4296,8 +3870,6 @@ plugins:
         help:
           info: '&eTeleports to different world'
           args: (normal/nether/end/1/2/3...) (playerName) (-s)
-          explanation:
-          - Requires cmi.command.world.[worldName] in addition to base permission node
         info:
           here: '&eAlready here'
       worth:
@@ -4730,4 +4302,3 @@ servers:
           1: "Information Desk"
           2: "Here you will find information"
           3: "about %1 mode."
-
