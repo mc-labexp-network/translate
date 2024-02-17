@@ -4,6 +4,12 @@ plugins:
       Поддерживаемые типы: &lbar, scoreboard"
     bossbar-feature-not-enabled: '&cЗапрашиваемая команда требует включения функции
       bossbar.'
+    parse-command-usage: 'Используйте: /tab parse <пользователь> <placeholder>'
+    send-command-usage: "Используйте: /tab send <Тип> <Игрок> <Название> <продолжительность>\n
+      Поддерживаемый тип: &lbar"
+    bossbar-not-found: '&cНе найден bossbar с именем "%name%"'
+    bossbar-already-announced: '&cЭтот bossbar уже транслируется'
+    bossbar-announce-command-usage: 'Используйте: /tab announce bar <название> <продолжительность>'
 servers:
   lobby:
     tab:
