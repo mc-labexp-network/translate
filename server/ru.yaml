@@ -1,4 +1,9 @@
 plugins:
+  tab:
+    announce-command-usage: "Используйте: /tab announce <Тип> <Название> <Длина>\n
+      Поддерживаемые типы: &lbar, scoreboard"
+    bossbar-feature-not-enabled: '&cЗапрашиваемая команда требует включения функции
+      bossbar.'
 servers:
   lobby:
     tab:
