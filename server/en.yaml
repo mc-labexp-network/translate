@@ -4281,6 +4281,80 @@ plugins:
     filter:
       alert: "The chat filter has blocked some of the words of the {player} to the server {server}: {message}"
 servers:
+  all:
+    no-perms: "You don't have permission!"
+  proxy:
+    lecore:
+      glist:
+        list: "{prefix} General online {online} players"
+        server: "{prefix} Server {server} - {online} players"
+      hub:
+        already: "{prefix} You already is lobby!"
+        notAvailable: "{prefix} All hubs not available"
+        connect: "{prefix} Connect you to {server}"
+      find:
+        usage: "{prefix} Use /find <player>"
+        find: "{prefix} User {player} on {server}"
+        offline: "{prefix} User {player} is offline"
+      where: "{prefix} You on {server}"
+      ping:
+        user: "{prefix} Your ping {ping} ms"
+        other: "{prefix} Ping player {player} is {ping} ms"
+      alert:
+        usage: "{prefix} Use /alert <msg>"
+        chat: "Broadcast | {message} by {player}"
+        title: "ALARM"
+        subtitle: "{message} by {player}"
+    skinrestorer:
+      help:
+        skin:
+          main: "Changes your own skin."
+          skins: "Opens the skins GUI."
+          set: "Changes your skin."
+          set_other: "Sets the skin for a target player."
+          set_url: "Changes your skin from a URL."
+          clear: "Clears your skin."
+          clear_other: "Clears the skin of a target player."
+          search: "Search up a skin that you want."
+          update: "Updates your skin."
+          update_other: "Updates the skin of a target player."
+        sr:
+          main: "Admin commands for SkinsRestorer."
+          reload: "Checks required plugin API services."
+          status: "Removes player or skin data from the database."
+          drops: "Displays the target player's current skin properties."
+          apply_skin: "Re-apply the skin for target player."
+          create_custom: "Create a custom server wide skin."
+          set_skin_all: "Set the skin of every player to a single skin."
+          apply_skin_all: "Re-apply the skin to all players."
+          purge_old_data: "Purge old skin data from over x days ago."
+          dump: "Upload support data to bytebin.lucko.me."
+      success:
+        skin_change: "Your skin has been changed."
+        skin_change_other: "You changed the skin of <name>."
+        skin_clear: "Your skin has been cleared."
+        skin_clear_other: "Skin cleared for player <name>."
+        updating_skin: "Your skin has been updated."
+        updating_skin_other: "Skin updated for player <name>."
+        admin_applyskin: "Player skin has been refreshed!"
+        admin_createcustom: "Skin <skin> has been created!"
+        admin_drop: "<type> data dropped for <target>."
+        admin_reload: "Config and Locale has been reloaded!"
+      error:
+        generic: "An error occurred while requesting skin data, please try again later!"
+        skin_disabled: "This skin is disabled by an administrator."
+        skinurl_disallowed: "This domain has not been allowed by the administrator."
+        updating_skin: "An error occurred while updating your skin. Please try again later!"
+        updating_url: "You cannot update custom URL skins! <newline><red>Request again using /skin url"
+        updating_customskin: "Skin cannot be updated because its custom."
+        invalid_urlskin: "Invalid skin URL or format, <newline><red>Try uploading your skin to imgur and right click 'copy image address' <newline><red>For guide see: <red><underlined>skinsrestorer.net/skinurl"
+        admin_applyskin: "Player's skin could NOT be refreshed!"
+        ms:
+          full: "MineSkin API timed out while uploading your <red>skin. Please try again later."
+          api:
+            failed: "MineSkin API is overloaded, please try again later!"
+            key_invalid: "Invalid MineSkin API key!, contact the server owner about this!"
+        ms_unknown: "Unknown MineSkin Error!"
   lobby:
     tab:
       scoreboard:
