@@ -9,3 +9,14 @@ plugins:
       2: /tab bossbar send <Имя> [Игрок]
       3: /tab bossbar announce <название> <длина>
       1: /tab bossbar [on/off/toggle] [Игрок] [опции]
+servers:
+  lobby:
+    tab:
+      scoreboard:
+        profile:
+          stats:
+            level: 'Уровень:'
+            progress: 'Прогресс:'
+          rank: 'Ранг:'
+          balance: 'Баланс:'
+          profile: '%img_le_sb_ru_profile%'
