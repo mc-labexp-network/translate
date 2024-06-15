@@ -10,6 +10,8 @@ plugins:
     bossbar-not-found: '&cНе найден bossbar с именем "%name%"'
     bossbar-already-announced: '&cЭтот bossbar уже транслируется'
     bossbar-announce-command-usage: 'Используйте: /tab announce bar <название> <продолжительность>'
+    team-feature-required: Для выполнения этой команды требуется включить функцию
+      командного табло
 servers:
   lobby:
     tab:
